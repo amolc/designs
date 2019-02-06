@@ -1,0 +1,53 @@
+<div ng-controller="CategoryEditController">
+    <div class="page-container">
+        <header ng-include="'partials/super_admin/common/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/super_admin/common/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">Edit Category</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <form role="form" class="form-horizontal form-groups-bordered">
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Title</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Enter Title" ng-model='categorydata.catg_name'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Alias</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Enter alias" ng-model='categorydata.catg_alias'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">Description</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-2" placeholder="Enter Description" ng-model='categorydata.catg_description'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-5">
+                                            <button type="submit" class="btn btn_back" ng-click='editCategory(categorydata)'>Edit Category</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+        
+    </div>
+    
+</div>

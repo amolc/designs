@@ -1,0 +1,67 @@
+<div ng-controller="businessController">
+    <div class="page-container">
+        <header ng-include="'partials/super_admin/common/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/super_admin/common/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">Add User</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <form role="form" name="addusersfrm" class="form-horizontal form-groups-bordered" ng-submit='adduser(addusersfrm)'>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Business Name</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Enter Business name" ng-model='businessdata.business_name' required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label" >Business Address</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Business Address" ng-model='businessdata.business_address' required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">Email Id</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="email" class="form-control" id="field-2" placeholder="Enter Email Id" ng-model='businessdata.email_id' required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">User Name</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-2" placeholder="Enter User Name" ng-model='businessdata.business_username' required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label" >Password</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="password" class="form-control" id="field-2" placeholder="Enter Password" ng-model='businessdata.business_password' required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-5">
+                                            <button type="submit" class="btn btn_back" >Add User</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+       
+    </div>
+ 
+</div>

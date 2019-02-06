@@ -1,0 +1,57 @@
+<div ng-controller="businessController">
+    <div class="page-container">
+        <header ng-include="'partials/super_admin/common/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/super_admin/common/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">Users</h2>
+            <div class="add_btn_container">
+                <button class="btn btn-success" type="button" ng-click="goto('add_user')">Add Users</button>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <table class="table table-bordered table-striped datatable" id="table-2">
+                                    <thead>
+                                        <tr>
+
+                                            <th>Business Name</th>
+                                            <th>Business Address</th>
+                                            <th>Email Address</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="business in businessuserlist">
+                                            <td>{{business.business_name}}</td>
+                                            <td>{{business.business_address}}</td>
+                                            <td>{{business.email_id}}</td>
+                                            <td>
+                                                <a class="btn btn-default btn-sm btn-icon icon-left" ng-click="edituser(business.business_id)">
+                                                    <i class="entypo-pencil"></i> Edit
+                                                </a>
+
+                                                <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" ng-click='deletebusiness({{business.business_id}})'>
+                                                    <i class="entypo-cancel"></i> Delete
+                                                </a>
+                                                <a href="" class="btn btn-info btn-sm btn-icon icon-left" ng-click='maincategorydata({{category.maincatg_id}})'>
+                                                    <i class="entypo-info"></i> View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+    </div>
+</div>

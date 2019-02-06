@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ seoData.title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gadgetsinasia Author" />
+	<meta name="title" content="{{title}}">
+	<meta name="description" content="{{description}}">
+	<meta name="keywords" content="{{keywords}}">
+
+
+
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+	<script src="js/InventoryController.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+
+	<!-- StyleSheets -->
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+
+
+	<!-- Fonts Online -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<style>
+		.navbar-collapse {
+    	padding: 0px;
+    	float: none;
+	}
+	.search-div
+	{
+		width: 560px;
+	}
+	.search-nav
+	{
+		    padding-left: 96px !important;
+	}
+
+
+	
+	.carousel-inner>.carousel-item>a>img, .carousel-inner>.carousel-item>img {
+    height: 100% !important;
+    width: auto !important;
+    max-height: 285px !important;
+    max-width: 1485px !important;
+    flex-shrink: 0;
+    vertical-align: middle;
+    }
+	.carousel-item {
+    position: relative;
+    display: none;
+    align-items: center;
+    width: 100%;
+    transition: transform .6s ease;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.carousel-inner>.carousel-item>a {
+    overflow: hidden !important;
+    max-width: 1485px !important;
+    width: 100% !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 5px 5px;
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+div[data-next-button], div[data-prev-button], .carousel-control-next, .carousel-control-prev {
+    opacity: .03 !important;
+    -webkit-transition: opacity .3s ease-in;
+    -moz-transition: opacity .3s ease-in;
+    -o-transition: opacity .3s ease-in;
+    -ms-transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
+}
+.left-product-button, .right-product-button, .carousel-control-next, .carousel-control-prev {
+    color: #28526f !important;
+    font-size: 3rem;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.carousel-control-prev {
+    left: 0;
+}
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+}
+
+@media screen and (min-width: 768px){
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -20px;
+}
+}
+@media screen and (min-width: 768px){
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -20px;
+}
+}
+
+@media screen and (min-width: 768px){
+.cont{
+	width: 1330px;
+}
+}
+
+
+/* Second Slider */
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.carousel-control { 
+    width: 8%;
+    width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right { 
+    margin-right: 40px;
+    margin-left: 32px; 
+    background-image: none;
+    opacity: 1;
+}
+.carousel-control > a > span {
+    color: white;
+	  font-size: 29px !important;
+}
+
+.carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 5px; 
+    float: left;
+ }
+
+ .active > div { display:none; }
+ .active > div:first-child { display:block; }
+
+/*xs*/
+@media (max-width: 767px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		     { left: -50%; }
+  .carousel-col                { width: 50%; }
+	.active > div:first-child + div { display:block; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		     { left: -50%; }
+  .carousel-col                { width: 50%; }
+	.active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-inner .active.left { left: -33%; }
+  .carousel-inner .active.right { left: 33%; }
+	.carousel-inner .next        { left:  33%; }
+	.carousel-inner .prev		     { left: -33%; }
+  .carousel-col                { width: 20%; }
+	.active > div:first-child + div { display:block; }
+    .active > div:first-child + div + div { display:block; }
+	.active > div:first-child + div + div+ div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+  .carousel-inner .active.left { left: -25%; }
+  .carousel-inner .active.right{ left:  25%; }
+	.carousel-inner .next        { left:  25%; }
+	.carousel-inner .prev		     { left: -25%; }
+  .carousel-col                { width: 19%; }
+	.active > div:first-child + div { display:block; }
+    .active > div:first-child + div + div { display:block; }
+	.active > div:first-child + div + div + div { display:block; }
+	.active > div:first-child + div + div + div + div { display:block; }
+}
+
+.block {
+	width: 200px;
+	height: 230px;
+}
+
+.red {background: red;}
+
+.blue {background: blue;}
+
+.green {background: green;}
+
+.yellow {background: yellow;}
+
+.white {background: gray;}
+
+/* En second slider */
+header div.topmenuitem {
+    margin: 10px 0 5px 15px;
+}
+header .topmenuitem {
+    z-index: 1;
+}
+
+eader a, header a:active, header a:visited {
+    color: #fff;
+}
+header .right-border {
+    border-right: 2px;
+    border-right-color: #fff;
+    border-right-style: solid;
+    padding-right: 10px;
+}
+header i {
+    padding-right: 5px;
+    margin-right: 3px;
+}
+@media (min-width: 768px){
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0;
+    margin-left: -105px;
+   }
+   .carr{
+    MARGIN-LEFT: -454px;
+   }
+}
+.list-group-item:first-child {
+    border-top-left-radius: 10px!important;
+    border-top-right-radius: 10px!important;
+}
+@media (min-width: 992px){
+.col-md-3 {
+    width: 24%;
+}
+}
+
+.list-group-item {
+    padding: 13px 17px;
+}
+
+
+footer .building img {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 180%;
+}
+.m-1 {
+    margin: .25rem !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.d-flex {
+    display: flex !important;
+}
+
+footer .footer-menu button {
+	padding: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: solid thin #fff;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+footer .building {
+    margin-left: -44px;
+    float: left;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem !important;
+}
+.align-self-center {
+    align-self: center !important;
+}
+footer .building img {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 180%;
+}
+img {
+    font-size: .1rem;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.d-flex {
+    display: flex !important;
+}
+footer>div {
+    height: 100%;
+}
+
+.main--container footer {
+    position: relative !important;
+    bottom: 0;
+    background: #141e30;
+    background: -webkit-linear-gradient(to right,#243b55,#141e30);
+    background: linear-gradient(to right,#243b55,#141e30);
+    color: #fff;
+}
+.main--container section, .main--container header, .main--container main, .main--container footer {
+    min-width: 100%;
+}
+footer {
+    position: relative;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+footer .copyr {
+	margin-bottom: -25px;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+.pt-2, .py-2 {
+    padding-top: .5rem !important;
+}
+footer>div {
+    height: 100%;
+}
+.carousel-col{
+	font-family: Raleway,sans-serif;
+    text-align: center;
+    /* padding: 0 0 73px; */
+    /* border: 1px solid rgba(0,0,0,.1); */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.card{
+	border: 1px solid rgba(0,0,0,.1); 
+}
+
+.tmaster.large-image .elipsis {
+    font-size: 1.01em;
+    line-height: 1.15em;
+    max-height: 60px !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    overflow: hidden;
+    text-align: left;
+    white-space: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    word-break: normal !important;
+}
+.tmaster.large-image .homebox-descr {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.tmaster.large-image .homebox-descr {
+    display: flex;
+    justify-content: center;
+    min-height: 80px;
+}
+.pl-2, .px-2 {
+    padding-left: .5rem !important;
+}
+.pr-2, .px-2 {
+    padding-right: .5rem !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.med-caps 
+{
+	color: #999 !important;
+    font-size: 11px;
+    padding-left: 5px;
+    font-variant: small-caps;
+
+}
+.small-caps{
+	color: #999 !important;
+    font-size: 11px;
+    padding-left: 5px;
+    font-variant: small-caps;
+}
+.masterscroller .masterscroller-buttons {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.masterscroller .masterscroller-buttons button {
+    color: #808080;
+    background-color: #fff;
+}
+
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    text-align: center;
+}
+.btn-ico.ggray {
+    color: #000;
+    background: #fafafa;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #dadada #d2d2d2 #c5c5c5 #c5c5c5;
+    background-image: -webkit-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: -moz-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: -o-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: linear-gradient(to bottom,#fcfcfc,#f0f0f0);
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 1px 2px rgba(0,0,0,.05);
+}
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: box-shadow .3s cubic-bezier(.25,.8,.25,1),background-color 1s ease;
+}
+.btn-ico {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.btn-ico.ico.ico-blue span {
+    background: #4d7089;
+    color: #fff;
+}
+.btn-ico.ico span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    padding: 10px 0 12px;
+    text-align: center;
+    border-radius: 3px 0 0 3px;
+    background: rgba(0,0,0,.15);
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.modal-header {
+    min-height: 40px;
+    background-color: #28526f !important;
+    color: #fff !important;
+}
+@media (min-width: 576px){
+	.modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+}
+.text-center {
+    text-align: center !important;
+}
+
+.mt-2, .my-2 {
+    margin-top: .5rem !important;
+}
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.btn-ico.blue {
+    color: #fff;
+    background: #4d7089;
+}
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: box-shadow .3s cubic-bezier(.25,.8,.25,1),background-color 1s ease;
+}
+.btn-ico {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+.col-c{
+	font-size: 16px;
+    color: #212529;
+	font-weight: normal;
+}
+
+/* start register css  */
+
+.top-spacer {
+            min-height: 10px;
+            background-color: #014579;
+            width: 100%;
+        }
+
+        .thin-spacer {
+            min-height: 1px;
+            background-color: #014579;
+            width: 100%;
+        }
+
+        .etkColor {
+            background-color: #014579;
+        }
+
+        header {
+            background-color: white !important;
+            text-align: center;
+        }
+
+        .hlogo img {
+            height: 50px;
+        }
+
+        .title-application {
+            margin-bottom: 12px;
+            font-size: large;
+            padding-top: 15px;
+            font-weight: bold;
+        }
+
+        .clearspacer {
+            min-height: 25px;
+        }
+
+        .padlock {
+            position: relative;
+            padding-left: 20px;
+            font-family: Arial;
+        }
+
+            .padlock::before, .padlock::after {
+                content: "";
+                position: absolute;
+                display: block;
+                background-position: 0 -180px;
+            }
+
+            .padlock::before {
+                top: -2px;
+                left: 2px;
+                width: 10px;
+                height: 8px;
+                border-radius: 12px 12px 0 0;
+                border: 2px solid #999;
+            }
+
+            .padlock::after {
+                top: 0;
+                left: 0;
+                width: 14px;
+                height: 12px;
+                border-radius: 2px;
+                margin-top: 5px;
+                background-color: #ffec64;
+                background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+                color: #333;
+                font-weight: bold;
+                border: 1px solid #fa2;
+            }
+
+        /* Thanks to priceminister */
+
+        .CreditCardForm {
+            margin: 10px;
+            position: relative;
+            width: 750px;
+            align-self:center;
+        }
+
+            .CreditCardForm .CreditCard {
+                border-radius: 10px;
+                border: thin solid #999;
+                background-color: #EEE;
+                padding: 0;
+                width: 450px;
+                height: 300px;
+            }
+
+                .CreditCardForm .CreditCard .CardInfo {
+                    padding: 10px;
+                }
+
+                    .CreditCardForm .CreditCard .CardInfo label {
+                        margin: 0;
+                    }
+
+                .CreditCardForm .CreditCard .CreditTop {
+                    margin-top: 20px;
+                    background-color: #28526f;
+                    height: 50px;
+                }
+
+                    .CreditCardForm .CreditCard .CreditTop img {
+                        float: right;
+                        width: 250px;
+                        position: relative;
+                        top: -3px;
+                    }
+
+                    .CreditCardForm .CreditCard .CreditTop .creditCardTitle {
+                        float: left;
+                        padding-left: 10px;
+                        color: white;
+                        font-size: 25px;
+                        padding-top: 5px;
+                    }
+
+            .CreditCardForm .CreditCardAddress {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                right: 20px;
+                top: 0;
+                padding-left: 25px;
+                padding-right: 5px;
+                border-radius: 0 10px 10px 0;
+                border: thin solid #999;
+                border-left: none;
+            }
+
+                .CreditCardForm .CreditCardAddress label {
+                    position: relative;
+                    top: 3px;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .CreditCardForm .CreditCardAddress input.form-control {
+                    padding: 4px;
+                }
+        @media only screen and (max-width: 770px) {
+            .CreditCardForm .CreditCardAddress {
+                position: relative;
+                left: 0;
+                right: unset;
+                top: 0;
+                border-left: thin solid #999;
+                border-radius: 10px 10px 10px 10px;
+                align-self: center;
+            }
+            .CreditCardForm .CreditCard {
+                align-self: center;
+            }
+                .CreditCardForm {
+                display:flex;
+                align-self:center;
+                flex-direction: column;
+            }
+        }
+        @media only screen and (min-width: 780px) {
+            .card {
+                min-width:775px!important;
+            }
+            }
+        .SingleCard {
+            width: 30%;
+            float: left;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+            background-color: #28526f;
+            max-width: 230px;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+
+        .SingleCard i:first-child {
+            padding-right: 5px;
+        }
+
+            .SingleCard span {
+                padding-right: 5px;
+            }
+
+        .payment-option:disabled::after {
+            content: "Expired";
+            color: red;
+        }
+
+        /*Floating labels*/
+
+        .has-float-label {
+            display: block;
+            position: relative
+        }
+
+            .has-float-label label, .has-float-label > span {
+                font-weight: bold;
+                position: absolute;
+                cursor: text;
+                font-size: 85%;
+                opacity: 1;
+                top: -.5em;
+                left: .75rem;
+                z-index: 3;
+                line-height: 1;
+                padding: 0 1px
+            }
+
+                .has-float-label label::after, .has-float-label > span::after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    background: #fff;
+                    height: 2px;
+                    top: 50%;
+                    left: -.2em;
+                    right: -.2em;
+                    z-index: -1
+                }
+
+            .has-float-label .form-control::-webkit-input-placeholder {
+                opacity: 1;
+            }
+
+            .has-float-label .form-control::-moz-placeholder {
+                opacity: 1;
+            }
+
+            .has-float-label .form-control:-ms-input-placeholder {
+                opacity: 1;
+            }
+
+            /* ReSharper disable once CssNotResolved */
+            .has-float-label .form-control::placeholder {
+                opacity: 1;
+            }
+
+            /* end css */
+            .card-header {
+                font-size: 15px;
+                padding: 1.50rem 1.25rem;
+                margin-bottom: 0;
+                background-color: rgba(0,0,0,.03);
+                border-bottom: 1px solid rgba(0,0,0,.125);
+            }
+p{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1.60rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #212529;
+    text-align: left!important;
+    /* background-color: #fff!important; */
+    /* font-size: 15px; */
+    /* font-weight: normal; */
+    /* color: black; */
+}
+</style>
+
+
+	<!-- JavaScripts -->
+	<script src="js/vendors/modernizr.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!--[if lt IE 9]>
+        <script src="js/lib/html5shiv.min.js"></script>
+        <script src="js/lib/respond.min.js"></script>
+        <![endif]-->
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38030533-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+
+		(function (b) {
+			(function (a) {
+				"__CF" in b && "DJS" in b.__CF ? b.__CF.DJS.push(a) : "addEventListener" in b ? b.addEventListener("load", a, !1) : b.attachEvent("onload", a)
+			})(function () {
+				"FB" in b && "Event" in FB && "subscribe" in FB.Event && (FB.Event.subscribe("edge.create", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "like", a])
+				}), FB.Event.subscribe("edge.remove", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "unlike", a])
+				}), FB.Event.subscribe("message.send", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "send", a])
+				}));
+				"twttr" in b && "events" in twttr && "bind" in twttr.events && twttr.events.bind("tweet", function (a) {
+					if (a) {
+						var b;
+						if (a.target && a.target.nodeName == "IFRAME") a: {
+							if (a = a.target.src) {
+								a = a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);
+								b = 0;
+								for (var c; c = a[b]; ++b)
+									if (c.indexOf("url") === 0) {
+										b = unescape(c.split("=")[1]);
+										break a
+									}
+							}
+							b = void 0
+						}
+						_gaq.push(["_trackSocial", "twitter", "tweet", b])
+					}
+				})
+			})
+		})(window);
+        /* ]]> */
+	</script>
+</head>
+
+<body class="home" data-scroll-animation="true" data-spy="scroll" data-target="#main-navbar" ng-app="tradeexchangeApp"
+ ng-controller="InventoryController">
+
+	<header class="" id="header">
+		<nav class="classHeaderBorder" style="border: none;">
+			<div class="container" style="">
+                <div>
+                    <a class="cate-style logosh" href="index.html" style="width: 300px;"><img class="carr" src="images/g.png" style="margin-top: 25px; height: 40px; margin-bottom: 10px;"
+                        alt="tradeexchange.co"></a>
+                </div>
+			</div>
+		</nav>
+	</header>
+
+	   
+    <section>
+        <div class="container" style="width: 800px;"> 
+          <!-- Payout Method -->
+          
+          <div class="" >
+               <form id="form--customerApplication" name="signupRequest" method="post" enctype="multipart/form-data">
+                <div class="m-auto d-flex flex-column justify-content-center">
+                <div class="text-center title-application">New Reseller Application Form - International Form</div>
+                <div class="card card-4 col-xl-6 pl-0 pr-0 m-auto">
+                <div class="card-header">
+                    Company Address Information - Must match your Business License
+                </div>
+                <div class="card-body" style="padding: 15px 0px 5px 50px;font-size: 16px;">
+                
+                <div class="form-group row py-0 my-0">
+                    <label class="col-lg-3 col-form-label text-lg-right py-0">
+                        <span class="text-danger">
+                            <b>* Required</b>
+                        </span>
+                    </label>
+                    <div class="col-lg-9 py-0"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--companyName" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Company Name</b> <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <input name="companyName" id="input--companyName" class="form-control mw-100" type="text" required="">
+                    </div>
+                    <div class="col col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--address1" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Address</b> <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <input name="address1" id="input--address1" class="form-control mw-100" type="text" required="">
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--address2" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Suite/Apt/Unit</b>
+                    </label>
+                    <div class="col-lg-7">
+                        <input name="address2" id="input--address2" class="form-control mw-100" type="text">
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                    <div class="form-group row">
+                        <label for="input--city" class="col-lg-3 col-form-label text-lg-right">
+                            <b>City</b> <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-7">
+                            <input name="city" id="input--city" class="form-control" type="text" required="">
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="form-group row">
+                
+                        <label class="col-lg-3 col-form-label text-lg-right">
+                            <b>Postal Code</b> <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-7">
+                            <input name="zip" id="input--zip" class="form-control" required="">
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="input--country" class="col-lg-3 col-form-label text-lg-right">
+                            <b>Country</b>
+                        </label>
+                        <div class="col-lg-7">
+                            <select name="country" class="form-control" required="">
+                                <option></option>
+                
+                                        <option value="AF">AF - Afghanistan</option> 
+                                        <option value="AX">AX - Aland Islands</option> 
+                                        <option value="AL">AL - Albania</option> 
+                                        <option value="DZ">DZ - Algeria</option> 
+                                        <option value="AS">AS - American Samoa</option> 
+                                        <option value="AD">AD - Andorra</option> 
+                                        <option value="AO">AO - Angola</option> 
+                                        <option value="AI">AI - Anguilla</option> 
+                                        <option value="AQ">AQ - Antarctica</option> 
+                                        <option value="AG">AG - Antigua and Barbuda</option> 
+                                        <option value="AR">AR - Argentina</option> 
+                                        <option value="AM">AM - Armenia</option> 
+                                        <option value="AW">AW - Aruba</option> 
+                                        <option value="AU">AU - Australia</option> 
+                                        <option value="AT">AT - Austria</option> 
+                                        <option value="AZ">AZ - Azerbaijan</option> 
+                                        <option value="A2">A2 - Azores</option> 
+                                        <option value="BS">BS - Bahamas, The</option> 
+                                        <option value="BH">BH - Bahrain</option> 
+                                        <option value="BK">BK - Baker, Howland and Jarvis</option> 
+                                        <option value="BD">BD - Bangladesh</option> 
+                                        <option value="BB">BB - Barbados</option> 
+                                        <option value="BY">BY - Belarus</option> 
+                                        <option value="BE">BE - Belgium</option> 
+                                        <option value="BZ">BZ - Belize</option> 
+                                        <option value="BJ">BJ - Benin</option> 
+                                        <option value="BM">BM - Bermuda</option> 
+                                        <option value="BT">BT - Bhutan</option> 
+                                        <option value="BO">BO - Bolivia</option> 
+                                        <option value="BQ">BQ - Bonaire, St. Eustatius, Saba</option> 
+                                        <option value="BA">BA - Bosnia and Herzegovina</option> 
+                                        <option value="BW">BW - Botswana</option> 
+                                        <option value="BV">BV - Bouvet Island</option> 
+                                        <option value="BR">BR - Brazil</option> 
+                                        <option value="IO">IO - British Indian Ocean Territory</option> 
+                                        <option value="BN">BN - Brunei Darussalam</option> 
+                                        <option value="BG">BG - Bulgaria</option> 
+                                        <option value="BF">BF - Burkina Faso</option> 
+                                        <option value="BI">BI - Burundi</option> 
+                                        <option value="KH">KH - Cambodia</option> 
+                                        <option value="CM">CM - Cameroon</option> 
+                                        <option value="CA">CA - Canada</option> 
+                                        <option value="IC">IC - Canary Islands</option> 
+                                        <option value="CV">CV - Cape Verde</option> 
+                                        <option value="KY">KY - Cayman Islands</option> 
+                                        <option value="CF">CF - Central African Republic</option> 
+                                        <option value="XC">XC - Ceuta</option> 
+                                        <option value="TD">TD - Chad</option> 
+                                        <option value="CL">CL - Chile</option> 
+                                        <option value="CN">CN - China</option> 
+                                        <option value="CX">CX - Christmas Island</option> 
+                                        <option value="CC">CC - Cocos (Keeling) Islands</option> 
+                                        <option value="CO">CO - Colombia</option> 
+                                        <option value="KM">KM - Comoros</option> 
+                                        <option value="CG">CG - Congo</option> 
+                                        <option value="CK">CK - Cook Islands</option> 
+                                        <option value="CR">CR - Costa Rica</option> 
+                                        <option value="CI">CI - Cote D'Ivoire (Ivory Coast)</option> 
+                                        <option value="HR">HR - Croatia (Hrvatska</option> 
+                                        <option value="CU">CU - Cuba</option> 
+                                        <option value="CW">CW - Curacao</option> 
+                                        <option value="CY">CY - Cyprus</option> 
+                                        <option value="CZ">CZ - Czech Republic</option> 
+                                        <option value="CD">CD - Democratic Republic of Congo</option> 
+                                        <option value="DK">DK - Denmark</option> 
+                                        <option value="DJ">DJ - Djibouti</option> 
+                                        <option value="DM">DM - Dominica</option> 
+                                        <option value="DO">DO - Dominican Republic</option> 
+                                        <option value="TL">TL - East Timor</option> 
+                                        <option value="EC">EC - Ecuador</option> 
+                                        <option value="EG">EG - Egypt</option> 
+                                        <option value="SV">SV - El Salvador</option> 
+                                        <option value="EN">EN - England</option> 
+                                        <option value="GQ">GQ - Equatorial Guinea</option> 
+                                        <option value="ER">ER - Eritrea</option> 
+                                        <option value="EE">EE - Estonia</option> 
+                                        <option value="ET">ET - Ethiopia</option> 
+                                        <option value="EP">EP - Europe</option> 
+                                        <option value="FK">FK - Falkland Islands (Malvinas)</option> 
+                                        <option value="FO">FO - Faroe Islands</option> 
+                                        <option value="FJ">FJ - Fiji</option> 
+                                        <option value="FI">FI - Finland</option> 
+                                        <option value="FR">FR - France</option> 
+                                        <option value="GF">GF - French Guiana</option> 
+                                        <option value="PF">PF - French Polynesia</option> 
+                                        <option value="TF">TF - French Southern Territories</option> 
+                                        <option value="GA">GA - Gabon</option> 
+                                        <option value="GM">GM - Gambia</option> 
+                                        <option value="GE">GE - Georgia</option> 
+                                        <option value="DE">DE - Germany</option> 
+                                        <option value="GH">GH - Ghana</option> 
+                                        <option value="GI">GI - Gibraltar</option> 
+                                        <option value="GR">GR - Greece</option> 
+                                        <option value="GL">GL - Greenland</option> 
+                                        <option value="GD">GD - Grenada</option> 
+                                        <option value="GP">GP - Guadeloupe</option> 
+                                        <option value="GU">GU - Guam</option> 
+                                        <option value="GT">GT - Guatemala</option> 
+                                        <option value="GG">GG - Guernsey</option> 
+                                        <option value="GN">GN - Guinea</option> 
+                                        <option value="GW">GW - Guinea-Bissau</option> 
+                                        <option value="GY">GY - Guyana</option> 
+                                        <option value="HT">HT - Haiti</option> 
+                                        <option value="HM">HM - Heard and McDonald Islands</option> 
+                                        <option value="HO">HO - Holland</option> 
+                                        <option value="HN">HN - Honduras</option> 
+                                        <option value="HK">HK - Hong Kong</option> 
+                                        <option value="HU">HU - Hungary</option> 
+                                        <option value="IS">IS - Iceland</option> 
+                                        <option value="IN">IN - India</option> 
+                                        <option value="ID">ID - Indonesia</option> 
+                                        <option value="IR">IR - Iran</option> 
+                                        <option value="IQ">IQ - Iraq</option> 
+                                        <option value="IE">IE - Ireland</option> 
+                                        <option value="IL">IL - Israel</option> 
+                                        <option value="IT">IT - Italy</option> 
+                                        <option value="JM">JM - Jamaica</option> 
+                                        <option value="JP">JP - Japan</option> 
+                                        <option value="JE">JE - Jersey</option> 
+                                        <option value="JA">JA - Johnston Atoll</option> 
+                                        <option value="JO">JO - Jordan</option> 
+                                        <option value="KZ">KZ - Kazakhstan</option> 
+                                        <option value="KE">KE - Kenya</option> 
+                                        <option value="KF">KF - Kingman Reef</option> 
+                                        <option value="KI">KI - Kiribati</option> 
+                                        <option value="KR">KR - Korea (South)</option> 
+                                        <option value="KV">KV - Kosovo</option> 
+                                        <option value="KO">KO - Kosrae</option> 
+                                        <option value="KW">KW - Kuwait</option> 
+                                        <option value="KG">KG - Kyrgyzstan</option> 
+                                        <option value="LA">LA - Laos</option> 
+                                        <option value="LV">LV - Latvia</option> 
+                                        <option value="LB">LB - Lebanon</option> 
+                                        <option value="LS">LS - Lesotho</option> 
+                                        <option value="LR">LR - Liberia</option> 
+                                        <option value="LY">LY - Libya</option> 
+                                        <option value="LI">LI - Liechtenstein</option> 
+                                        <option value="LT">LT - Lithuania</option> 
+                                        <option value="LU">LU - Luxembourg</option> 
+                                        <option value="MO">MO - Macau</option> 
+                                        <option value="MK">MK - Macedonia</option> 
+                                        <option value="MG">MG - Madagascar</option> 
+                                        <option value="M3">M3 - Madeira</option> 
+                                        <option value="MW">MW - Malawi</option> 
+                                        <option value="MY">MY - Malaysia</option> 
+                                        <option value="MV">MV - Maldives</option> 
+                                        <option value="ML">ML - Mali</option> 
+                                        <option value="MT">MT - Malta</option> 
+                                        <option value="MH">MH - Marshall Islands</option> 
+                                        <option value="MQ">MQ - Martinique</option> 
+                                        <option value="MR">MR - Mauritania</option> 
+                                        <option value="MU">MU - Mauritius</option> 
+                                        <option value="YT">YT - Mayotte</option> 
+                                        <option value="XL">XL - Melilla</option> 
+                                        <option value="MX">MX - Mexico</option> 
+                                        <option value="FM">FM - Micronesia</option> 
+                                        <option value="MI">MI - Midway Islands</option> 
+                                        <option value="MD">MD - Moldova</option> 
+                                        <option value="MC">MC - Monaco</option> 
+                                        <option value="MN">MN - Mongolia</option> 
+                                        <option value="ME">ME - Montenegro</option> 
+                                        <option value="MS">MS - Montserrat</option> 
+                                        <option value="MA">MA - Morocco</option> 
+                                        <option value="MZ">MZ - Mozambique</option> 
+                                        <option value="MM">MM - Myanmar</option> 
+                                        <option value="NR">NR - Nauru</option> 
+                                        <option value="NA">NA - Navassa Island</option> 
+                                        <option value="NP">NP - Nepal</option> 
+                                        <option value="NL">NL - Netherlands</option> 
+                                        <option value="NC">NC - New Caledonia</option> 
+                                        <option value="NZ">NZ - New Zealand</option> 
+                                        <option value="NI">NI - Nicaragua</option> 
+                                        <option value="NE">NE - Niger</option> 
+                                        <option value="NG">NG - Nigeria</option> 
+                                        <option value="NU">NU - Niue</option> 
+                                        <option value="NF">NF - Norfolk Island</option> 
+                                        <option value="KP">KP - North Korea</option> 
+                                        <option value="NB">NB - Northern Ireland</option> 
+                                        <option value="MP">MP - Northern Mariana Islands</option> 
+                                        <option value="NO">NO - Norway</option> 
+                                        <option value="OM">OM - Oman</option> 
+                                        <option value="--">-- - Other</option> 
+                                        <option value="PK">PK - Pakistan</option> 
+                                        <option value="PW">PW - Palau</option> 
+                                        <option value="PO">PO - Palmyra Atoll</option> 
+                                        <option value="PA">PA - Panama</option> 
+                                        <option value="PG">PG - Papua New Guinea</option> 
+                                        <option value="PY">PY - Paraguay</option> 
+                                        <option value="PE">PE - Peru</option> 
+                                        <option value="PH">PH - Philippines</option> 
+                                        <option value="PN">PN - Pitcairn</option> 
+                                        <option value="PL">PL - Poland</option> 
+                                        <option value="PT">PT - Portugal</option> 
+                                        <option value="PR">PR - Puerto Rico</option> 
+                                        <option value="QA">QA - Qatar</option> 
+                                        <option value="RE">RE - Reunion</option> 
+                                        <option value="RO">RO - Romania</option> 
+                                        <option value="RT">RT - Rota</option> 
+                                        <option value="RU">RU - Russian Federation</option> 
+                                        <option value="RW">RW - Rwanda</option> 
+                                        <option value="S1">S1 - Saba</option> 
+                                        <option value="KN">KN - Saint Kitts and Nevis</option> 
+                                        <option value="LC">LC - Saint Lucia</option> 
+                                        <option value="VC">VC - Saint Vincent (Grenadines)</option> 
+                                        <option value="SP">SP - Saipan</option> 
+                                        <option value="WS">WS - Samoa</option> 
+                                        <option value="SM">SM - San Marino</option> 
+                                        <option value="ST">ST - Sao Tome and Principe</option> 
+                                        <option value="SA">SA - Saudi Arabia</option> 
+                                        <option value="SF">SF - Scotland</option> 
+                                        <option value="SN">SN - Senegal</option> 
+                                        <option value="RS">RS - Serbia</option> 
+                                        <option value="YU">YU - Serbia and Montenegro</option> 
+                                        <option value="SC">SC - Seychelles</option> 
+                                        <option value="SL">SL - Sierra Leone</option> 
+                                        <option value="SG">SG - Singapore</option> 
+                                        <option value="SK">SK - Slovak Republic</option> 
+                                        <option value="SI">SI - Slovenia</option> 
+                                        <option value="SB">SB - Solomon Islands</option> 
+                                        <option value="SO">SO - Somalia</option> 
+                                        <option value="ZA">ZA - South Africa</option> 
+                                        <option value="GS">GS - South Georgia Islands</option> 
+                                        <option value="ES">ES - Spain</option> 
+                                        <option value="LK">LK - Sri Lanka</option> 
+                                        <option value="E2">E2 - St Eustatius</option> 
+                                        <option value="BL">BL - St. Barthelemy</option> 
+                                        <option value="SW">SW - St. Christopher</option> 
+                                        <option value="SH">SH - St. Helena</option> 
+                                        <option value="PM">PM - St. Pierre and Miquelon</option> 
+                                        <option value="VL">VL - St. Thomas</option> 
+                                        <option value="SD">SD - Sudan</option> 
+                                        <option value="SR">SR - Suriname</option> 
+                                        <option value="SJ">SJ - Svalbard and Jan Mayen Islands</option> 
+                                        <option value="SZ">SZ - Swaziland</option> 
+                                        <option value="SE">SE - Sweden</option> 
+                                        <option value="CH">CH - Switzerland</option> 
+                                        <option value="SY">SY - Syria</option> 
+                                        <option value="TA">TA - Tahiti</option> 
+                                        <option value="TW">TW - Taiwan</option> 
+                                        <option value="TJ">TJ - Tajikistan</option> 
+                                        <option value="TZ">TZ - Tanzania</option> 
+                                        <option value="TH">TH - Thailand</option> 
+                                        <option value="TP">TP - Timor-Leste</option> 
+                                        <option value="TI">TI - Tinian</option> 
+                                        <option value="TG">TG - Togo</option> 
+                                        <option value="TK">TK - Tokelau</option> 
+                                        <option value="TO">TO - Tonga</option> 
+                                        <option value="ZZ">ZZ - Tortola</option> 
+                                        <option value="TT">TT - Trinidad and Tobago</option> 
+                                        <option value="TU">TU - Truk</option> 
+                                        <option value="TN">TN - Tunisia</option> 
+                                        <option value="TR">TR - Turkey</option> 
+                                        <option value="TM">TM - Turkmenistan</option> 
+                                        <option value="TC">TC - Turks and Caicos Islands</option> 
+                                        <option value="TV">TV - Tuvalu</option> 
+                                        <option value="UG">UG - Uganda</option> 
+                                        <option value="UA">UA - Ukraine</option> 
+                                        <option value="UI">UI - Union Island</option> 
+                                        <option value="AE">AE - United Arab Emirates</option> 
+                                        <option value="GB">GB - United Kingdom</option> 
+                                        <option value="UK">UK - United Kingdom(FEDEX)</option> 
+                                        <option value="UY">UY - Uruguay</option> 
+                                        <option value="UM">UM - US Minor Outlying Islands</option> 
+                                        <option value="UZ">UZ - Uzbekistan</option> 
+                                        <option value="VU">VU - Vanuatu</option> 
+                                        <option value="VA">VA - Vatican City State (Holy See)</option> 
+                                        <option value="VE">VE - Venezuela</option> 
+                                        <option value="VN">VN - Vietnam</option> 
+                                        <option value="VR">VR - Virgin Gorda</option> 
+                                        <option value="VG">VG - Virgin Islands (British)</option> 
+                                        <option value="VI">VI - Virgin Islands (US)</option> 
+                                        <option value="WI">WI - Wake Island</option> 
+                                        <option value="WL">WL - Wales</option> 
+                                        <option value="WF">WF - Wallis and Futuna Islands</option> 
+                                        <option value="EH">EH - Western Sahara</option> 
+                                        <option value="YA">YA - Yap</option> 
+                                        <option value="YE">YE - Yemen</option> 
+                                        <option value="ZR">ZR - Zaire</option> 
+                                        <option value="ZM">ZM - Zambia</option> 
+                                        <option value="ZW">ZW - Zimbabwe</option>             </select>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-lg-3 col-form-label text-lg-right">
+                            <b>The Address Is</b> <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-7">
+                            <label> <input type="radio" name="residential" value="true"> Commercial </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <label> <input type="radio" name="residential" checked="" value="true"> Residential</label>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="clearspacer"></div>
+                <div class="card card-4 col-xl-6 pl-0 pr-0 m-auto ">
+                    <div class="card-header">
+                        Contact Information
+                    </div>
+                    <div class="card-body" style="padding: 15px 0px 5px 50px;font-size: 16px;">
+                            <div class="form-group row">
+                                <label for="input--phoneNumber" class="col-lg-3 col-form-label text-lg-right">
+                                    <b>Phone Number</b> <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-7">
+                                    <input name="phoneNumber" id="input--phone" class="form-control mw-100" required="">
+                                    <span class="text-muted">Please enter the phone number starting with your country code, city code and number.</span>
+                                </div>
+                                <div class="col-lg-2"></div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input--faxNumber" class="col-lg-3 col-form-label text-lg-right">
+                                    <b>Fax Number</b>
+                                </label>
+                                <div class="col-lg-7">
+                                    <input name="faxNumber" id="input--fax" class="form-control mw-100">
+                                    <span class="text-muted">Please enter the phone number starting with your country code, city code and number.</span>
+                                </div>
+                                <div class="col-lg-2"></div>
+                            </div>
+                
+                        <div class="form-group row">
+                            <label for="input--contactName" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Contact Name</b> <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="contactName" id="input--contactName" class="form-control mw-100" type="text" required="">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input--mainEmail" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Main Email Address</b> <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="mainEmail" id="input--mainEmail" class="form-control mw-100" type="email" required="">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input--altEmail1" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Alternate Email 1</b>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="alternateEmail1" id="input--altEmail1" class="form-control mw-100" type="email">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input--altEmail2" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Alternate Email 2</b>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="alternateEmail2" id="input--altEmail2" class="form-control mw-100" type="email">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearspacer"></div>
+                <div class="card card-4 col-xl-6 pl-0 pr-0 m-auto ">
+                <div class="card-header">
+                    Business Information
+                </div>
+                <div class="card-body" style="padding: 15px 0px 5px 50px;font-size: 16px;">
+                <div class="form-group row">
+                    <label for="input--businessDescription" class="col-lg-3 col-form-label text-lg-right">
+                        <b>What category <u>best</u> describes your business?</b><span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <select name="businessDescription" id="input--businessDescription" class="form-control " required="">
+                            <option value="">Select the best option...</option>
+                            <option value="Systems Integrator">Systems Integrator</option>
+                            <option value="Distributor">Reseller</option>
+                            <option value="Retail Store">Retail Store</option>
+                            <option value="Corporate Reseller">Corporate Reseller</option>
+                            <option value="VAR/Consultant">VAR/Consultant</option>
+                            <option value="e-Commerce">e-Commerce</option>
+                            <option value="Dealer">Dealer</option>
+                            <option value="OEM">OEM</option>
+                            <option value="Educational Reseller">Educational Reseller</option>
+                            <option value="Broker">Broker</option>
+                            <option value="eBay Seller">eBay Seller</option>
+                            <option value="Exporter">Exporter</option>
+                            <option value="Repair Shop">Repair Shop</option>
+                            <option value="Retail Store">Retail Store</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--employeeRange" class="col-lg-3 col-form-label text-lg-right">
+                        <b>How many employee(s) in your company?</b><span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <select name="employeeRange" id="input--employeeRange" class="form-control" type="number" required="">
+                            <option value="">Select the best option...</option>
+                            <option value="1">1 - 5</option>
+                            <option value="2">6 - 10</option>
+                            <option value="3">11 - 20</option>
+                            <option value="4">21 - 50</option>
+                            <option value="5">51 - 100</option>
+                            <option value="6">101 - 300</option>
+                            <option value="7">300+</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--revenueRange" class="col-lg-3 col-form-label text-lg-right">
+                        <b>What were your company's total revenues last year?</b><span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <select name="revenueRange" id="revenueRange" class="form-control" required="">
+                            <option value="">Select the best option...</option>
+                            <option value="2">Less than $100,000</option>
+                            <option value="3">$100,000 - $499,999</option>
+                            <option value="4">$500,000 - $999,999</option>
+                            <option value="5">$1,000,000 - $4,999,999</option>
+                            <option value="6">$5,000,000 - $9,999,999</option>
+                            <option value="7">$10,00,000 - $49,99,999</option>
+                            <option value="8">$50,000,000 - $100,000,000</option>
+                            <option value="9">$100,000,000+</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--companyWebsite" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Company Website</b>
+                    </label>
+                    <div class="col-lg-7">
+                        <div class="input-group">
+                            <input name="companyWebsite" id="input--companyWebsite" class="form-control mw-100" maxlength="50" type="url">
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--resaleNumber" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Resale Number</b> <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <input name="resaleNumber" id="input--resaleNumber" class="form-control mw-100" type="text" required="">
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="input--principleOwner" class="col-lg-3 col-form-label text-lg-right">
+                        <b>Principle Owner</b> <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-7">
+                        <input name="principleOwner" id="input--principleOwner" class="form-control mw-100" type="text" required="">
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                    <div class="form-group row">
+                        <div class="col-lg-3 col-xs-1  text-lg-right">
+                            <label class="col-form-label">
+                                <b>International Business License</b> <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                        <div class="col-lg-4 col-xs-5">
+                            <input name="internationalBusinessProof" class="form-control mw-100" type="file" accept=".pdf, .png, .jpg" required="">
+                
+                        </div>
+                        <div class="col-lg-5 col-xs-6">
+                            <span>
+                                Please upload a copy of your International Business License
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xs-11 border-top border-bottom">
+                        Any invalid PDF file will be rejected, if your file is not a PDF please use a tool to convert your file before uploading.
+                        <a href="https://www.google.com/search?q=free+convert+file+to+pdf">Click here for results on Google</a><small class="text-muted"> (Evertek is not responsible for any of these sites, this is just to help you find a tool to convert to PDF)</small>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-3 col-xs-1  text-lg-right"></div>
+                        <div class="col-lg-9 col-xs-11">
+                            <span class="text-danger">
+                                <b>NOTE: </b>
+                            </span> Your account cannot be activated until we receive ALL required documents.
+                
+                        </div>
+                    </div>
+                    <!-- <div class="form-group row"  style="padding: 0px 30px 0px 0px;">
+                        <div class="col-12">
+                            <hr>
+                            <h5 class="text-center">
+                                <b>
+                                    <u>Notice of Compliance with U.S. Export Control Laws and Regulations</u>
+                                </b>
+                            </h5>
+                
+                            <p>It is the strict policy of Evertek to comply with all U.S. export control laws and regulations in connection with the sale and export/shipment of Evertek products to our customers. U.S. export control laws and regulations embargo and otherwise prohibit or restrict trade with the following countries: (a) Cuba, (b) Iran, (c) North Korea, (d) Sudan, and (e) Syria, as well as proscribed or controlled destinations, end-users or persons/entities, identified on any of the following lists/databases:</p>
+                            <p>1. U.S. Dept. of Commerce Entity List: <a href="https://www.bis.doc.gov/entities/default.htm" target="_blank">https://www.bis.doc.gov/entities/default.htm</a> </p>
+                            <p>2. U.S. Dept of State OFAC List: <a href="https://www.treas.gov/offices/enforcement/ofac/sdn/" target="_blank">https://www.treas.gov/offices/enforcement/ofac/sdn/ </a></p>
+                            <p>3. OFAC Sanctions List: <a href="https://www.treas.gov/offices/enforcement/ofac/programs" target="_blank">https://www.treas.gov/offices/enforcement/ofac/programs </a></p>
+                            <p>4. U.S. Dept. of Commerce Denied Persons List: <a href="https://www.bis.doc.gov/dpl/default.shtm" target="_blank">https://www.bis.doc.gov/dpl/default.shtm </a> </p>
+                
+                            <p>No Evertek products may be sold, exported, re-exported, shipped, trans-shipped, drop-shipped, distributed, transferred or released, either directly or indirectly, to any of these countries, destinations, end-users, persons or entities, including but not limited to, nationals of these countries, or to companies organized or located in these countries in violation of U.S. export control laws and without first obtaining an express determination from Evertek (and to the extent necessary the U.S. Dept. of Commerce and U.S. Dept. of State) that any such transactions(s) are permitted by U.S. law.</p>
+                            <p>Please read and retain the required Destination Control Statement set forth below certifying your agreement that all transactions with Evertek comply with U.S. Export Control laws and regulations. If you have any questions, please contact your Evertek Account Manager.</p>
+                
+                            <br>
+                            <h5 class="text-center">
+                                <b>
+                                    <u>Destination Control Statement</u>
+                                </b>
+                            </h5>
+                            <p>
+                                <b>All products sold by Evertek to Customer (whether goods, commodities, technology or software) shall be exported from the United States in accordance with U.S. Dept. of State (OFAC) Export Administration Regulations. Diversion contrary to U.S. law is prohibited.</b>
+                            </p>
+                            <p>
+                                <b>Customer therefore certifies that it has and shall at all times comply with all U.S. export laws and regulations, including but not limited to, the aforesaid Dept. of Commerce and State Dept. Lists, and that it shall not at any time, directly or indirectly, divert any such products in violation thereof.</b>
+                            </p>
+                            <p>
+                                <b>Customer further certifies that it has provided Company with true and complete information regarding its ownership, the purchase (and purchaser) of said products, and represents and warrants that the purchase/sale is not prohibited by any U.S. export control laws or regulations applicable to the transaction (including trans-shipment, end-use or distribution to any end-user).</b>
+                            </p>
+                
+                            <hr>
+                        </div>
+                        <div class="col-lg-3 text-lg-right" style="text-align:right;">
+                            <input name="exportCompliance" type="checkbox" required="" value="true">
+                        </div>
+                        <div class="col-lg-7">
+                            <span>I agree to comply with the U.S. Export Control Laws and Regulations as set forth in the Notice of Compliance</span>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div> -->
+                </div>
+                </div>
+                
+                <div class="clearspacer"></div>
+                <div class="card card-4 col-xl-6 pl-0 pr-0 m-auto ">
+                    <div class="card-header">
+                        Login Information
+                    </div>
+                    <div class="card-body" style="padding: 15px 0px 5px 50px;font-size: 16px;">
+                        <div class="form-group row">
+                            <label for="input--password" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Password</b> <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="password" id="input--password" class="form-control mw-100" type="password" min="6" max="20" pattern="[a-zA-Z0-9\\!@#$%\^*()_+{}[\]:;\-?/.,&amp;]{6,20}$" required="">
+                                <span class="text-muted">Must be between 6 to 20 characters. May include Letters or Numbers. No Spaces. May include these special characters:\ ! @ # $ % ^ * ( ) _ + { } [ ] : ; - ? / . , &amp;</span>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input--confirmPassword" class="col-lg-3 col-form-label text-lg-right">
+                                <b>Confirm Password</b> <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-7">
+                                <input name="confirmPassword" id="input--confirmPassword" class="form-control mw-100" type="password" min="6" max="20" pattern="[a-zA-Z0-9\\!@#$%\^*()_+{}[\]:;\-?/.,&amp;]{6,20}$" required="">
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-3 col-md-1 text-lg-right" style="text-align:right;">
+                                <input name="newsletterSignup" type="checkbox" value="true">
+                            </div>
+                            <div class="col-lg-8 col-md-11">
+                                Add Me to the Evertek email broadcast!
+                
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-3 col-xs-1 text-lg-right" style="text-align:right;">
+                                <input type="checkbox" required="">
+                            </div>
+                            <div class="col-lg-8 col-xs-11">
+                                I have read and understand all
+                                <a target="_blank" data-toggle="modal" data-target="#modal--termsAndConditions" href="#">
+                                    <u>Terms and Conditions.</u>
+                                </a>
+                
+                            </div>
+                            <div class="col-12 text-center">
+                                <div style="margin: auto; width: 304px;">
+                                    <br>
+                                    <div class="g-recaptcha" data-sitekey="6Lfy-TQUAAAAAEP7PsYkkqrPc0phna7cIMscjh1x" data-callback="enableBtn"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lfy-TQUAAAAAEP7PsYkkqrPc0phna7cIMscjh1x&amp;co=aHR0cHM6Ly9ldmVydGVrLmNvbTo0NDM.&amp;hl=en&amp;v=v1547447582668&amp;size=normal&amp;cb=uw3rl4bal04y" width="304" height="78" role="presentation" name="a-q6zfreybjs68" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearspacer"></div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <b>We look forward to doing business with you!</b><br>
+                        <button id="button--submitCustomerApplication" type="submit" class="btn btn-lg btn-primary m-auto px-5 etkColor" disabled="">Sign Me Up</button>
+                    </div>
+                </div>
+                <div class="clearspacer"></div>
+                
+                
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8EszcB06nBxKniv4PVqAen1b72TlNZ4FIKDcF9n3A3QWGb7VP_2IOQHrCcTg3Oc_XhyDXqFQPTe4WEL2Hej10dp0BdShOiLjgP42PLFak3DbD7M95-aUWBoBitFYH3mb6GdGdygLYP0sw7a5vkACjyk"></form>
+          </div>
+        </div>
+      </section>
+
+
+	<footer style="background-color: #1c4d5c!important;padding-bottom: 35px;">
+		<div class="container classFooterTop cont mw-body d-flex">
+			<div class="row classItemListRow classTextColor">
+
+			
+				<div class="col-md-2">
+					<br>
+					<div class="align-self-center building mr-3">
+						<img class=" lazyloaded" src="images/f.png" src="/localimages/evertekbuilding-min.png">
+					</div>
+			
+
+				</div>
+				<div class="col-md-2">
+				
+            <p style="margin-top: 70px;
+			
+			line-height: 25px;
+			color: white;
+			text-align: justify;">
+					06-48A Sim Lim Square <br>
+					1 Rochor Canal Rd, Singapore <br>
+					Phone: +65 92408380 <br>
+					sales@gadgetsinasia.com  <br>
+			</p>
+
+				</div>
+				<div class="col-md-8">
+
+						<div class="footer-menu d-flex justify-content-center flex-wrap">
+								<div class="m-1"><button class="" data-navto="Product/All">Show Entire Inventory</button></div>
+								<div class="m-1"><button class="" data-controller="modal" data-method="/Modals/Contact" data-target="largeModal">Contact Us</button></div>
+								<div class="m-1"><button class="" data-controller="externalPage" data-method="open" data-target="About Us">About Us</button></div>
+								<div class="m-1 not-logged"><button data-controller="modal" data-method="/Modals/Login" data-target="genericModal">Log in</button></div>
+								<div class="m-1 not-logged"><button data-controller="modal" data-method="/Modals/Register" data-target="smallModal">Register</button></div>
+								<div class="m-1 logged d-none"><button data-navto="/Customer/Order" data-bread="Orders" data-element="ajax_box">Track Order</button></div>
+								<div class="m-1 logged d-none"><button data-navto="/RMA/GetRMA" data-bread="GetRMA" data-element="ajax_box">Create RMA</button></div>
+									</div>
+						<h5 class="classTextColor">About us</h5>
+						<p style="color: white;text-align: justify;">Gadgetsinasia is among the World’s largest excess Computer Distributor, closeout Computer Wholesaler, clearance Computer Supplier, and closeout Electronics Wholesaler. Evertek answers Computer Resellers' needs for real deals on Wholesale Computers, Wholesale Computer Parts and Wholesale Electronics. Make Evertek your source for Wholesale Computers, Wholesale Computer Parts and Wholesale Electronics and set up an account today! By signing up with Evertek, you’ll find out why Computer Resellers that are looking for Computer Wholesalers choose Evertek as their reliable source for Wholesale Computers, Wholesale Computer Parts, and Wholesale Electronics.</p>
+				</div>
+
+			
+			</div>
+		
+		</div>
+		<div class="copyr pt-2" style="font-size: 16px;color: white;">@2019 Gadgetsinasia.com </div>
+
+	</footer>
+
+
+
+	<!-- End Footer -->
+
+	<!-- GO TO TOP  -->
+	<a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a>
+	<!-- GO TO TOP End -->
+	</div>
+	<!-- End Page Wrapper -->
+
+	<!-- JavaScripts -->
+	<script src="js/vendors/jquery/jquery.min.js"></script>
+	<script src="js/vendors/wow.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="js/vendors/own-menu.js"></script>
+	<script src="js/vendors/jquery.sticky.js"></script>
+	<script src="js/vendors/owl.carousel.min.js"></script>
+
+	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+	<script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script>
+	<script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/vendors/jquery.nouislider.min.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/shared.js"></script>
+	<script src="js/article.js"></script>
+	<script>
+
+		$('.carousel[data-type="multi"] .item').each(function () {
+			var next = $(this).next();
+			if (!next.length) {
+				next = $(this).siblings(':first');
+			}
+			next.children(':first-child').clone().appendTo($(this));
+
+			for (var i = 0; i < 3; i++) {
+				next = next.next();
+				if (!next.length) {
+					next = $(this).siblings(':first');
+				}
+
+				next.children(':first-child').clone().appendTo($(this));
+			}
+		});
+	</script>
+</body>
+
+<!-- Mirrored from event-theme.com/themes/html/smarttech/GridProducts_4Columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Apr 2018 06:49:13 GMT -->
+
+</html>

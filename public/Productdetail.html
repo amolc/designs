@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ seoData.title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gadgetsinasia Author" />
+	<meta name="title" content="{{title}}">
+	<meta name="description" content="{{description}}">
+	<meta name="keywords" content="{{keywords}}">
+
+
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+	<script src="js/InventoryController.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+
+	<!-- StyleSheets -->
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+
+	<!-- Fonts Online -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<style>
+		.navbar-collapse {
+    	padding: 0px;
+    	float: none;
+	}
+	.search-div
+	{
+		width: 560px;
+	}
+	.search-nav
+	{
+		    padding-left: 96px !important;
+	}
+	
+	.carousel-inner>.carousel-item>a>img, .carousel-inner>.carousel-item>img {
+    height: 100% !important;
+    width: auto !important;
+    max-height: 285px !important;
+    max-width: 1485px !important;
+    flex-shrink: 0;
+    vertical-align: middle;
+    }
+	.carousel-item {
+    position: relative;
+    display: none;
+    align-items: center;
+    width: 100%;
+    transition: transform .6s ease;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.carousel-inner>.carousel-item>a {
+    overflow: hidden !important;
+    max-width: 1485px !important;
+    width: 100% !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 5px 5px;
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+div[data-next-button], div[data-prev-button], .carousel-control-next, .carousel-control-prev {
+    opacity: .03 !important;
+    -webkit-transition: opacity .3s ease-in;
+    -moz-transition: opacity .3s ease-in;
+    -o-transition: opacity .3s ease-in;
+    -ms-transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
+}
+.left-product-button, .right-product-button, .carousel-control-next, .carousel-control-prev {
+    color: #28526f !important;
+    font-size: 3rem;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.carousel-control-prev {
+    left: 0;
+}
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+}
+
+@media screen and (min-width: 768px){
+	.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -20px;
+}
+}
+@media screen and (min-width: 768px){
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -20px;
+}
+}
+
+@media screen and (min-width: 768px){
+.cont{
+	width: 1330px;
+}
+}
+
+
+/* Second Slider */
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.carousel-control { 
+    width: 8%;
+    width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right { 
+    margin-right: 40px;
+    margin-left: 32px; 
+    background-image: none;
+    opacity: 1;
+}
+.carousel-control > a > span {
+    color: white;
+	  font-size: 29px !important;
+}
+
+.carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 5px; 
+    float: left;
+ }
+
+ .active > div { display:none; }
+ .active > div:first-child { display:block; }
+
+/*xs*/
+@media (max-width: 767px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		     { left: -50%; }
+  .carousel-col                { width: 50%; }
+	.active > div:first-child + div { display:block; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		     { left: -50%; }
+  .carousel-col                { width: 50%; }
+	.active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-inner .active.left { left: -33%; }
+  .carousel-inner .active.right { left: 33%; }
+	.carousel-inner .next        { left:  33%; }
+	.carousel-inner .prev		     { left: -33%; }
+  .carousel-col                { width: 20%; }
+	.active > div:first-child + div { display:block; }
+    .active > div:first-child + div + div { display:block; }
+	.active > div:first-child + div + div+ div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+  .carousel-inner .active.left { left: -25%; }
+  .carousel-inner .active.right{ left:  25%; }
+	.carousel-inner .next        { left:  25%; }
+	.carousel-inner .prev		     { left: -25%; }
+  .carousel-col                { width: 19%; }
+	.active > div:first-child + div { display:block; }
+    .active > div:first-child + div + div { display:block; }
+	.active > div:first-child + div + div + div { display:block; }
+	.active > div:first-child + div + div + div + div { display:block; }
+}
+
+.block {
+	width: 200px;
+	height: 230px;
+}
+
+.red {background: red;}
+
+.blue {background: blue;}
+
+.green {background: green;}
+
+.yellow {background: yellow;}
+
+.white {background: gray;}
+
+/* En second slider */
+header div.topmenuitem {
+    margin: 10px 0 5px 15px;
+}
+header .topmenuitem {
+    z-index: 1;
+}
+
+eader a, header a:active, header a:visited {
+    color: #fff;
+}
+header .right-border {
+    border-right: 2px;
+    border-right-color: #fff;
+    border-right-style: solid;
+    padding-right: 10px;
+}
+header i {
+    padding-right: 5px;
+    margin-right: 3px;
+}
+@media (min-width: 768px){
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0;
+    margin-left: -105px;
+   }
+}
+.list-group-item:first-child {
+    border-top-left-radius: 10px!important;
+    border-top-right-radius: 10px!important;
+}
+@media (min-width: 992px){
+.col-md-3 {
+    width: 24%;
+}
+}
+
+.list-group-item {
+    padding: 13px 17px;
+}
+
+
+footer .building img {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 180%;
+}
+.m-1 {
+    margin: .25rem !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.d-flex {
+    display: flex !important;
+}
+
+footer .footer-menu button {
+	padding: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: solid thin #fff;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+footer .building {
+    margin-left: -44px;
+    float: left;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem !important;
+}
+.align-self-center {
+    align-self: center !important;
+}
+footer .building img {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 180%;
+}
+img {
+    font-size: .1rem;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.d-flex {
+    display: flex !important;
+}
+footer>div {
+    height: 100%;
+}
+
+.main--container footer {
+    position: relative !important;
+    bottom: 0;
+    background: #141e30;
+    background: -webkit-linear-gradient(to right,#243b55,#141e30);
+    background: linear-gradient(to right,#243b55,#141e30);
+    color: #fff;
+}
+.main--container section, .main--container header, .main--container main, .main--container footer {
+    min-width: 100%;
+}
+footer {
+    position: relative;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+footer .copyr {
+	margin-bottom: -25px;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+.pt-2, .py-2 {
+    padding-top: .5rem !important;
+}
+footer>div {
+    height: 100%;
+}
+.carousel-col{
+	font-family: Raleway,sans-serif;
+    text-align: center;
+    /* padding: 0 0 73px; */
+    /* border: 1px solid rgba(0,0,0,.1); */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.card{
+	border: 1px solid rgba(0,0,0,.1); 
+}
+
+.tmaster.large-image .elipsis {
+    font-size: 1.01em;
+    line-height: 1.15em;
+    max-height: 60px !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    overflow: hidden;
+    text-align: left;
+    white-space: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    word-break: normal !important;
+}
+.tmaster.large-image .homebox-descr {
+    position: absolute;
+    left: 0;
+    top: 150px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.tmaster.large-image .homebox-descr {
+    display: flex;
+    justify-content: center;
+    min-height: 80px;
+}
+.pl-2, .px-2 {
+    padding-left: .5rem !important;
+}
+.pr-2, .px-2 {
+    padding-right: .5rem !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.med-caps 
+{
+	color: #999 !important;
+    font-size: 11px;
+    padding-left: 5px;
+    font-variant: small-caps;
+
+}
+.small-caps{
+	color: #999 !important;
+    font-size: 11px;
+    padding-left: 5px;
+    font-variant: small-caps;
+}
+.masterscroller .masterscroller-buttons {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.masterscroller .masterscroller-buttons button {
+    color: #808080;
+    background-color: #fff;
+}
+
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    text-align: center;
+}
+.btn-ico.ggray {
+    color: #000;
+    background: #fafafa;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #dadada #d2d2d2 #c5c5c5 #c5c5c5;
+    background-image: -webkit-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: -moz-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: -o-linear-gradient(top,#fcfcfc,#f0f0f0);
+    background-image: linear-gradient(to bottom,#fcfcfc,#f0f0f0);
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 1px 2px rgba(0,0,0,.05);
+}
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: box-shadow .3s cubic-bezier(.25,.8,.25,1),background-color 1s ease;
+}
+.btn-ico {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.btn-ico.ico.ico-blue span {
+    background: #4d7089;
+    color: #fff;
+}
+.btn-ico.ico span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    padding: 10px 0 12px;
+    text-align: center;
+    border-radius: 3px 0 0 3px;
+    background: rgba(0,0,0,.15);
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.modal-header {
+    min-height: 40px;
+    background-color: #28526f !important;
+    color: #fff !important;
+}
+@media (min-width: 576px){
+	.modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+}
+.text-center {
+    text-align: center !important;
+}
+
+.mt-2, .my-2 {
+    margin-top: .5rem !important;
+}
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.btn-ico.blue {
+    color: #fff;
+    background: #4d7089;
+}
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: box-shadow .3s cubic-bezier(.25,.8,.25,1),background-color 1s ease;
+}
+.btn-ico {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+.col-c{
+	font-size: 16px;
+    color: #212529;
+	font-weight: normal;
+}
+
+
+
+
+/* start  css*/
+
+.m-auto {
+    margin: auto !important;
+}
+.row {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-right: -15px; */
+    /* margin-left: -15px; */
+}
+
+.pp-unitprice {
+    color: #000;
+    font-size: 1.3em;
+    font-weight: bold;
+	padding-top: unset;
+}
+.pp{
+	float: right;
+}
+
+
+/* start cart code  css*/
+
+
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    /* text-align: center; */
+}
+.btn-ico.yellow {
+    color: #000;
+    background-color: #ffec64;
+    background: linear-gradient(to bottom,#ffec64 5%,#ffab23 100%);
+    color: #333;
+    /* border-radius: 3px; */
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #fa2;
+}
+
+
+.btn-ico.ico span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    padding: 10px 0 12px;
+    text-align: center;
+    border-radius: 3px 0 0 3px;
+    background: rgba(0,0,0,.15);
+}
+.btn-ico {
+    display: inline-block;
+	min-width: 240px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+
+.addqty-input{
+	margin-top: 13px;
+    height: 40px;
+    /* min-height: 33px; */
+    min-width: 70px;
+}
+
+.box-b{
+	min-width: 350px;
+	background: #fffefd;
+    background: -moz-linear-gradient(top,#fffefd 0%,#fcf3dc 100%);
+    background: -webkit-linear-gradient(top,#fffefd 0%,#fcf3dc 100%);
+    background: linear-gradient(to bottom,#fffefd 0%,#fcf3dc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffefd',endColorstr='#fcf3dc',GradientType=0);
+    box-shadow: 0 2px 1px 0 rgba(29,26,22,.1);
+    -webkit-box-shadow: 0 2px 1px 0 rgba(29,26,22,.1);
+    -moz-box-shadow: 0 2px 1px 0 rgba(29,26,22,.1);
+    box-shadow: 0 0 10px 0 #c7c5c7;
+    position: relative;
+    margin-bottom: 25px !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 8px;
+    line-height: 1.42857143; */
+    /* vertical-align: top; */
+    border-top: none;
+}
+@media screen and (min-width: 1024px){
+  .ttitle {
+    background-color: #eee;
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+	border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+   }
+ }
+ .tab-content li {
+    list-style: none;
+}
+.font{
+	font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+	margin-left: 30px;
+    margin-top: 25px;
+}
+
+
+/* Hide the images by default */
+.mySlides {
+
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/* .prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+/* .caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+} */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 22.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.glyphicon-chevron-left{
+	transition: all .5s ease;
+    align-self: center;
+    font-size: 2em;
+	color: #4d7089;
+    opacity: 0.2;
+}
+ .glyphicon-chevron-right{
+	transition: all .5s ease;
+    align-self: center;
+    font-size: 2em;
+	color: #4d7089;
+    opacity: 0.2;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #1c4d5c;
+    border: none;
+}
+</style>
+
+
+	<!-- JavaScripts -->
+	<script src="js/vendors/modernizr.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!--[if lt IE 9]>
+        <script src="js/lib/html5shiv.min.js"></script>
+        <script src="js/lib/respond.min.js"></script>
+        <![endif]-->
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38030533-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+
+		(function (b) {
+			(function (a) {
+				"__CF" in b && "DJS" in b.__CF ? b.__CF.DJS.push(a) : "addEventListener" in b ? b.addEventListener("load", a, !1) : b.attachEvent("onload", a)
+			})(function () {
+				"FB" in b && "Event" in FB && "subscribe" in FB.Event && (FB.Event.subscribe("edge.create", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "like", a])
+				}), FB.Event.subscribe("edge.remove", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "unlike", a])
+				}), FB.Event.subscribe("message.send", function (a) {
+					_gaq.push(["_trackSocial", "facebook", "send", a])
+				}));
+				"twttr" in b && "events" in twttr && "bind" in twttr.events && twttr.events.bind("tweet", function (a) {
+					if (a) {
+						var b;
+						if (a.target && a.target.nodeName == "IFRAME") a: {
+							if (a = a.target.src) {
+								a = a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);
+								b = 0;
+								for (var c; c = a[b]; ++b)
+									if (c.indexOf("url") === 0) {
+										b = unescape(c.split("=")[1]);
+										break a
+									}
+							}
+							b = void 0
+						}
+						_gaq.push(["_trackSocial", "twitter", "tweet", b])
+					}
+				})
+			})
+		})(window);
+        /* ]]> */
+	</script>
+</head>
+
+<body class="home" data-scroll-animation="true" data-spy="scroll" data-target="#main-navbar" ng-app="tradeexchangeApp"
+ ng-controller="InventoryController">
+
+	<header class="" id="header">
+		<nav class="navbar ownmenu classHeaderBorder">
+			<div class="container" style="">
+
+				<div class="collapse navbar-collapse" id="nav-open-btn" style="margin-bottom: -40px;">
+
+
+
+					<ul class="nav navbar-right" style="margin-right: -80px;">
+
+						<li class="">
+
+							<div class=" topmenuitem ">
+								<a href="tel://9512528700" class="right-border"><i class="fa fa-phone" aria-hidden="true"></i>951-252-8700 </a>
+							</div>
+
+							<!-- <a href="addInventory.html?redirect=0">
+									951-252-8700 
+							</a> -->
+
+						</li>
+						<li class="">
+							<div class=" topmenuitem ">
+								<a class=" right-border purechat-button-expand" href="#" data-controller="modal" data-method="/Modals/Contact"
+								 data-target="largeModal">
+									<i class="fa fa-comments" aria-hidden="true"></i>Contact Us</a>
+							</div>
+						</li>
+
+						<li class="">
+							<div class=" topmenuitem ">
+								<a class=" right-border" href="/About/Us.html" data-controller="externalPage" data-method="open" data-target="About Us"><i
+									 class="fa fa-info" aria-hidden="true"></i>About Us</a>
+							</div>
+						</li>
+
+						<li class="">
+							<div class=" topmenuitem ">
+								<a class=" right-border" href="/About/Us.html" data-controller="externalPage" data-method="open" data-target="FAQ"><i
+									 class="fa fa-question" aria-hidden="true"></i>FAQ</a>
+							</div>
+						</li>
+
+						<li class="">
+							<div class=" topmenuitem loginmenuitem text-white">
+								<a href="#" data-controller="modal" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in"
+									 aria-hidden="true"></i>Log in</a> <span style="color:white;">or</span>
+								<a href="Register.html" class=" right-border" href="#" data-controller="modal">Register</a>
+							</div>
+						</li>
+
+						<li class="">
+							<div class=" topmenuitem">
+								<a href="#" class="cart-top" data-controller="cart" data-method="open_modal"><i class="fa fa-shopping-cart"
+									 aria-hidden="true"></i><span class="cart-totalqty">0</span> Items</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn"
+					 aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
+				</div>
+				<!-- NAV -->
+
+
+				<div class="collapse navbar-collapse" id="nav-open-btn">
+
+					<ul class="nav navbar-left catMenu ">
+						<a class="cate-style logosh" href="index.html" style="width: 300px;"><img src="images/g.png" style="margin-top: 25px; height: 40px; "
+							 alt="tradeexchange.co"></a>
+						<!-- <li class="">
+							<a href="index.html">Home</a>
+						</li> -->
+					</ul>
+
+					<ul class="nav navbar-right">
+						<li class="">
+							<div class="navbar-form classNavForm" role="search" style="padding-bottom: 15px;">
+								<div class="input-group">
+									<input type="text" class="form-control" style="width: 655px!important;height:40px" id="id_searchInput"
+									 placeholder="Full Search (Use keywords for better results)..." name="q">
+									<div class="input-group-btn">
+										<button class="btn btn-default" onclick="onSearch()" style="height: 40px;" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<section class="container classSection2 cont">
+		<div class="row">
+			<div>
+				<!-- <h4 class="text-center leftHeader">Welcome to Gadgetsinasia.comss</br> 
+					Singapore's largest electronics  store.</h4> -->
+			</div>
+			<!-- <hr class="classHrBorder"> -->
+			<div class="col-md-3">
+				<div class="shop-side-bar cd-dropdown">
+
+					<div class="list-group" style="font-size: 16px;">
+
+						<a href="#" class="list-group-item">
+							New Arrivals
+						</a>
+						<a href="#" class="list-group-item">
+							Computers & Components
+						</a>
+						<a href="#" class="list-group-item">
+							Notebooks & Accessories
+						</a>
+						<a href="#" class="list-group-item">
+							Tablets & Accessories
+						</a>
+						<a href="#" class="list-group-item">
+							Apple Products
+						</a>
+						<a href="#" class="list-group-item">
+							Mobile Phones & Accessories
+						</a>
+						<a href="#" class="list-group-item">
+							New Arrivals
+						</a>
+						<a href="#" class="list-group-item">
+							Computers & Components
+						</a>
+						<a href="#" class="list-group-item">
+							Notebooks & Accessories
+						</a>
+						<a href="#" class="list-group-item">
+							Tablets & Accessories
+						</a>
+						<a href="#" class="list-group-item">
+							Apple Products
+						</a>
+						<a href="#" class="list-group-item">
+							Mobile Phones & Accessories
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-md-9" style="border: 1px solid #1c4d5c;border-radius: 5px;">
+					<div class="col-md-12">
+							<div class="panel panel-primary" style="margin-top: 10px;">
+									<div class="panel-heading" style="font-size: 20px;
+									text-align: center;">Medion Lifetab Atom Z3735F Quad-Core 1.33GHz 2GB 32GB 10.1" Touchscreen IPS.</div>
+									
+							</div>
+					</div>	
+				<div class="col-md-12">
+						<div class="col-md-6">
+								
+								<div class="mySlides">
+								  <div class="numbertext">2 / 6</div>
+								  <img src="images/collection-1.jpg" style="width:100%">
+								</div>
+								<div class="mySlides">
+										<div class="numbertext">1 / 6</div>
+										<img src="images/feture-item-5.png" style="width:100%">
+									  </div>
+									
+								<div class="mySlides">
+								  <div class="numbertext">3 / 6</div>
+								  <img src="images/apple-watch.png" style="width:100%">
+								</div>
+								  
+								<div class="mySlides">
+								  <div class="numbertext">4 / 6</div>
+								  <img src="images/feture-item-5.png" style="width:100%">
+								</div>
+							  
+								
+								  
+								<a class="prev" onclick="plusSlides(-1)"><span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a class="next" onclick="plusSlides(1)"><span class="glyphicon glyphicon-chevron-right"></a>
+							  
+								<div class="caption-container">
+								  <p id="caption"></p>
+								</div>
+							  
+								<div class="row" style="margin-left: 50px;">
+								 
+								  <div class="column">
+									<img class="demo cursor" src="images/collection-1.jpg" style="width: 100%" onclick="currentSlide(2)">
+								  </div>
+								  <div class="column">
+										<img class="demo cursor" src="images/feture-item-5.png" style="width: 100%" onclick="currentSlide(1)">
+									  </div>
+								  <div class="column">
+									<img class="demo cursor" src="images/apple-watch.png" style="width: 100%" onclick="currentSlide(3)">
+								  </div>
+								  <div class="column">
+									<img class="demo cursor" src="images/feture-item-5.png" style="width: 100%" onclick="currentSlide(4)">
+								  </div>
+								 
+						</div>
+				</div>
+				<div class="col-md-12">
+					<br>
+					<br>
+					<br>
+					<div class="col-md-4">
+						<div class="panel box-b">
+							<div class="panel-heading pp" style="text-align:center;color: #9d0a0e;font-size: 2.0em;font-weight: bolder;">
+								$329.88 <span>Qty 2+ </span></div>
+							<div class="panel-heading pp-unitprice pp">$358.00 <span class="pp-blkqty">Qty 1+</span></div>
+
+							<div class="panel-body">
+
+
+								<div class="row" style="margin-top: 65px;margin-left: 0px;">
+									<input type="number" class="addqty-input pt-1 pb-1 mb-1 col-md-4 form-control" value="1" size="6" min="1" max="5">
+									<button class="btn-ico ico yellow card-1 waves-effect add-to-cart col" data-sku="LHV22162TC16B-PB"
+									 data-controller="cart" data-method="add"><span><i class="fa fa-cart-plus"></i></span>Add to Cart</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-bottom: 19px;">
+					<h6>1 Year Direct Warranty</h6>
+					<div class="row" style="border-radius: 5px;border: 1px solid #d6cfcf;">
+
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top: 20px;">
+							<table class="table">
+								<thead>
+									<!-- <tr>
+											<th>Time</th>
+											<th>Location</th>
+											<th>Message</th>
+										  </tr> -->
+								</thead>
+								<tbody>
+									<tr>
+										<td class="col-md-3 ttitle">Product Number</td>
+
+										<td class="col-md-3">LHV22162TC16B-PB</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Condition</td>
+
+										<td class="col-md-3">New</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Warranty Period</td>
+										<td class="col-md-3">1 Year Direct</td>
+									</tr>
+
+									<tr>
+										<td class="col-md-3 ttitle">Product Number</td>
+
+										<td class="col-md-3">LHV22162TC16B-PB</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Condition</td>
+
+										<td class="col-md-3">New</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Warranty Period</td>
+										<td class="col-md-3">1 Year Direct</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top: 20px;">
+							<table class="table">
+								<thead>
+									<!-- <tr>
+											<th>Time</th>
+											<th>Location</th>
+											<th>Message</th>
+										  </tr> -->
+								</thead>
+								<tbody>
+									<tr>
+										<td class="col-md-3 ttitle">Unit Dimensions</td>
+
+										<td class="col-md-3">18.25x18.5x12.5 in</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Each Unit Weighs</td>
+
+										<td class="col-md-3">31.5 lb | 14.29 Kg</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Each Master Box Has</td>
+										<td class="col-md-3">1</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Unit Dimensions</td>
+										<td class="col-md-3">18.25x18.5x12.5 in</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Each Unit Weighs</td>
+
+										<td class="col-md-3">31.5 lb | 14.29 Kg</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 ttitle">Each Master Box Has</td>
+										<td class="col-md-3">1</td>
+									</tr>
+
+								</tbody>
+
+							</table>
+						</div>
+
+					</div>
+
+				</div>
+				<br>
+				<div class="col-md-12" style="border-radius: 5px;margin-bottom: 19px;border: 1px solid #d6cfcf;background: #f7f7f7;">
+					<div class="row m-auto col-12 tabitem">
+						<nav class="col-12">
+							<span>
+									<h5 style="    color: #1c4d5c;">Specifications:</h5>
+
+							</span>
+						
+
+						<div class="tab-content col-12 font">
+							<div>
+								<ul>
+									<li><strong>Lorex LHV22162TC16B 16-Channel 2TB HD DVR Security System<br><br></strong></li>
+									<li><strong>General&nbsp; Features:</strong></li>
+									<li>16 Channel Security DVR system with 16 HD 1080p Cameras</li>
+									<li>2 Terabyte hard drive installed</li>
+									<li>DVR records video in real-time at 1080p HD on all 16 channels</li>
+									<li>Introducing Lorex Cloud, our innovative hassle-free cloud connection service<br><br></li>
+									<li><strong>DVR Features:</strong></li>
+									<li>True high definition 1080p recording on all cameras</li>
+									<li>24/7 security-grade hard drive</li>
+									<li>Continuous, scheduled and motion recording</li>
+									<li>H.264 video compression</li>
+									<li>HDMI cable included for simple connection to HD TVs</li>
+									<li>PTZ cameras supported, remote control through App</li>
+									<li>Accurate time stamps with NTP &amp; daylight savings time</li>
+									<li>Click and drag digital zoom in live view and playback</li>
+									<li>2 video outputs (HDMI &amp; VGA) to connect multiple monitors</li>
+									<li>Instant USB backup of live video from selected camera</li>
+									<li>Automatic firmware upgrade</li>
+									<li>3-Step remote view with Lorex Cloud</li>
+									<li>PC and Mac compatible</li>
+									<li>Free iOS and Android compatible apps</li>
+									<li>Advanced apps with live viewing, playback, video recording, and snap shot</li>
+									<li>Push notifications of motion events</li>
+									<li>Instant email alerts with snap shot attachment</li>
+									<li>Dual streaming to conserve bandwidth<br><br></li>
+									<li><strong>Ports:</strong></li>
+									<li>Sixteen (16) BNC video in</li>
+									<li>One (1) RCA audio in</li>
+									<li>One (1) RCA audio out</li>
+									<li>One (1) HDMI</li>
+									<li>One (1) VGA</li>
+									<li>Two (2) USB 2.0 (1 front/1 rear)</li>
+									<li>One (1) RJ-45 Ethernet</li>
+									<li>A/B</li>
+									<li>DC 12V</li>
+									<li>Power switch<br><br></li>
+									<li><strong>Camera Features:</strong></li>
+									<li>Bullet camera</li>
+									<li>True HD 1080p Image Sensor</li>
+									<li>Infrared cut filter ensures accurate color representation</li>
+									<li>Night vision range up to 130ft (40m) in ambient lighting &amp; 90ft (28m) in total darkness</li>
+									<li>Close up recognition in the dark with SmartIR</li>
+									<li>Anti-glare feature ensures clear images under strong lighting conditions</li>
+									<li>ClearNight imaging for superior low light performance, improving recording efficiency</li>
+									<li>Split glass design minimizes IR reflection</li>
+									<li>Weatherproof for outdoor &amp; indoor installation (IP66 Rated)</li>
+									<li>Extreme temperature performance (-22° ~ 140°F / -30° ~ 60°C)</li>
+									<li>90° field of view</li>
+									<li>Vandal resistant design with cable pass-through bracket</li>
+									<li>Lightweight and durable polycarbonate housing</li>
+									<li>Versatile ceiling or wall mounting options</li>
+									<li>Residential and business friendly compact design<br><br></li>
+									<li><strong>Power Adapter Specifications:</strong></li>
+									<li>DVR: Input: 100-240V, 50/60Hz, 1.7A Output: 12V==5A</li>
+									<li>Camera: Input: 100-240V AC, 50/60Hz, Output: 12V==2.5A DC<br><br></li>
+									<li><strong>Dimensions:</strong></li>
+									<li>DVR: 2 x 14.8 x 11.5-inches (H x W x D, approximate)</li>
+									<li>Camera: 2.7 x 2.7 x 6-inches (H x W x D, approximate)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="col-md-12" style="border-radius: 5px;margin-bottom: 19px;border: 1px solid #d6cfcf;background: #f7f7f7;">
+						<div class="row m-auto col-12 tabitem">
+							<nav class="col-12">
+								<span>
+										<h5 style="    color: #1c4d5c;">Includes:</h5>
+	
+								</span>
+							
+	
+							<div class="tab-content col-12 font">
+								<div>
+										<ul>
+												<li>16-Channel DVR</li>
+												<li>2 Terabyte hard drive installed</li>
+												<li>Sixteen (16) 1080p Cameras</li>
+												<li>Sixteen (16) 60ft BNC/Power extension cables</li>
+												<li>DVR power adapter and power cord</li>
+												<li>Two (2) Camera Power adapters</li>
+												<li>Two (2) Power cable splitters</li>
+												<li>Ethernet cable</li>
+												<li>SATA cable</li>
+												<li>Remote control&nbsp;</li>
+												<li>Two (2) AAA batteries</li>
+												<li>USB&nbsp;Mouse</li>
+												<li>HDMI cable</li>
+												<li>Quick Start Guide</li>
+												<li>Screws &amp; Anchors</li>
+												</ul>
+								</div>
+							</div>
+						</div>
+	
+					</div>
+
+					<div class="col-md-12" style="border-radius: 5px;margin-bottom: 19px;border: 1px solid #d6cfcf;background: #f7f7f7;">
+							<div class="row m-auto col-12 tabitem">
+								<nav class="col-12">
+									<span>
+											<h5 style="color: #1c4d5c;">Additionals:</h5>
+		
+									</span>
+								
+		
+								<div class="tab-content col-12 font">
+									<div>
+											<ul>
+													<li><strong>Notes:</strong></li>
+													<li>Model: LHV22162TC16B</li>
+													<li>UPC:&nbsp;6 95529 00624 6<br><br></li>
+													<li><strong>Product Requirements:</strong></li>
+													<li>Available power outlets</li>
+													<li>Compatible network</li>
+													<li>Available Ethernet port</li>
+													<li>Display with HDMI or VGA&nbsp;connectors</li>
+											</ul>
+
+									</div>
+									
+
+								</div>
+							</div>
+		
+						</div>
+	
+
+			</div>
+
+		</div>
+
+		</div>
+
+		</div>
+	</section>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header bg-evertek text-white">
+					<button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+					<h4 class="modal-title" style="color: white;font-weight: normal;"><i class="fa fa-user"></i> Log in</h4>
+
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+
+							<form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+								<div class="form-group">
+									<label for="username" class="control-label col-c">Username or email</label>
+									<input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username"
+									 placeholder="example@gmail.com">
+									<span class="help-block"></span>
+								</div>
+								<div class="form-group">
+									<label for="password" class="control-label col-c">Password</label>
+									<input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+									<span class="help-block"></span>
+								</div>
+								<div id="loginErrorMsg" class="alert alert-error hide col-c">Wrong username og password</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="remember" id="remember" class="col-c"> Remember login (Not recommended for
+										public computers)
+									</label>
+
+								</div>
+								<div class="text-center mt-2">
+									<button id="login-button" class="btn-ico ico blue card-1" data-controller="account" data-method="login"><span
+										 class="btn-before"><i class="fa fa-sign-in"></i></span>Log in</button>
+								</div>
+
+							</form>
+							<div class="modal-footer pt-1 pb-1">
+								<div class="options text-center mt-1 w-100">
+									<p class="col-c">Not a member? <a href="#" data-controller="modal" data-method="/Modals/Register" data-target="smallModal">Register</a></p>
+									<p class="col-c">Gadgetsinasia is a B2B distributor. We do not sell to the end user.</p>
+									<!-- <p class="small-text text-left">*If you have an email linked to multiple accounts you will need to provide the username.</p>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<footer style="background-color: #1c4d5c!important;padding-bottom: 35px;">
+		<div class="container classFooterTop cont mw-body d-flex">
+			<div class="row classItemListRow classTextColor">
+
+
+				<div class="col-md-2">
+					<br>
+					<div class="align-self-center building mr-3">
+						<img class=" lazyloaded" src="images/f.png" src="/localimages/evertekbuilding-min.png">
+					</div>
+
+
+				</div>
+				<div class="col-md-2">
+
+					<p style="margin-top: 70px;
+			
+			line-height: 25px;
+			color: white;
+			text-align: justify;">
+						06-48A Sim Lim Square <br>
+						1 Rochor Canal Rd, Singapore <br>
+						Phone: +65 92408380 <br>
+						sales@gadgetsinasia.com <br>
+					</p>
+
+				</div>
+				<div class="col-md-8">
+
+					<div class="footer-menu d-flex justify-content-center flex-wrap">
+						<div class="m-1"><button class="" data-navto="Product/All">Show Entire Inventory</button></div>
+						<div class="m-1"><button class="" data-controller="modal" data-method="/Modals/Contact" data-target="largeModal">Contact
+								Us</button></div>
+						<div class="m-1"><button class="" data-controller="externalPage" data-method="open" data-target="About Us">About
+								Us</button></div>
+						<div class="m-1 not-logged"><button data-controller="modal" data-method="/Modals/Login" data-target="genericModal">Log
+								in</button></div>
+						<div class="m-1 not-logged"><button data-controller="modal" data-method="/Modals/Register" data-target="smallModal">Register</button></div>
+						<div class="m-1 logged d-none"><button data-navto="/Customer/Order" data-bread="Orders" data-element="ajax_box">Track
+								Order</button></div>
+						<div class="m-1 logged d-none"><button data-navto="/RMA/GetRMA" data-bread="GetRMA" data-element="ajax_box">Create
+								RMA</button></div>
+					</div>
+					<h5 class="classTextColor">About us</h5>
+					<p style="color: white;text-align: justify;">Gadgetsinasia is among the World’s largest excess Computer
+						Distributor, closeout Computer Wholesaler, clearance Computer Supplier, and closeout Electronics Wholesaler.
+						Evertek answers Computer Resellers' needs for real deals on Wholesale Computers, Wholesale Computer Parts and
+						Wholesale Electronics. Make Evertek your source for Wholesale Computers, Wholesale Computer Parts and Wholesale
+						Electronics and set up an account today! By signing up with Evertek, you’ll find out why Computer Resellers that
+						are looking for Computer Wholesalers choose Evertek as their reliable source for Wholesale Computers, Wholesale
+						Computer Parts, and Wholesale Electronics.</p>
+				</div>
+
+
+			</div>
+
+		</div>
+		<div class="copyr pt-2" style="font-size: 16px;color: white;">@2019 Gadgetsinasia.com </div>
+
+	</footer>
+
+
+
+	<!-- End Footer -->
+
+	<!-- GO TO TOP  -->
+	<a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a>
+	<!-- GO TO TOP End -->
+	</div>
+	<!-- End Page Wrapper -->
+
+	<!-- JavaScripts -->
+	<script src="js/vendors/jquery/jquery.min.js"></script>
+	<script src="js/vendors/wow.min.js"></script>
+	<script src="js/vendors/bootstrap.min.js"></script>
+	<script src="js/vendors/own-menu.js"></script>
+	<script src="js/vendors/jquery.sticky.js"></script>
+	<script src="js/vendors/owl.carousel.min.js"></script>
+
+	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+	<script type="text/javascript" src="rs-plugin/js/jquery.tp.t.min.js"></script>
+	<script type="text/javascript" src="rs-plugin/js/jquery.tp.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/vendors/jquery.nouislider.min.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/shared.js"></script>
+	<script src="js/article.js"></script>
+	<script>
+
+		$('.carousel[data-type="multi"] .item').each(function () {
+			var next = $(this).next();
+			if (!next.length) {
+				next = $(this).siblings(':first');
+			}
+			next.children(':first-child').clone().appendTo($(this));
+
+			for (var i = 0; i < 3; i++) {
+				next = next.next();
+				if (!next.length) {
+					next = $(this).siblings(':first');
+				}
+
+				next.children(':first-child').clone().appendTo($(this));
+			}
+		});
+	</script>
+<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		</script>
+			
+
+</body>
+
+<!-- Mirrored from event-theme.com/themes/html/smarttech/GridProducts_4Columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Apr 2018 06:49:13 GMT -->
+
+</html>

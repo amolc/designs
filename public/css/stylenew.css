@@ -1,0 +1,343 @@
+/* Sakhu created new css file cusotom OWN CSS  */
+
+/* left side css code */
+
+.filter_button {
+    display: inline-block !important;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 30px;
+    height: 15px;
+    background: #808080;
+    display: block;
+    border-radius: 15px;
+    position: relative;
+    margin-right: 5px;
+    top: 5px;
+}
+
+.attribute-list {
+    list-style: none;
+    width: 100%;
+    padding-left: 10px;
+    /* border: thin solid #28526f; */
+    margin-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #fff;
+}
+input[type="radio"], input[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+.filter-item {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.clickable {
+    cursor: pointer;
+}
+.filter_button:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 11px;
+    height: 11px;
+    background: #fff;
+    border-radius: 11px;
+    transition: .3s;
+}
+.filter-item:checked+.filter_button:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+.filter-item:checked+.filter_button::after {
+    background: #387700;
+}
+.filter-item:checked+.filter_button {
+    background: #7ae11e;
+    background: -moz-linear-gradient(left,#7ae11e 0%,#91e842 100%);
+    background: -webkit-gradient(left top,right top,color-stop(0%,#7ae11e),color-stop(100%,#91e842));
+    background: -webkit-linear-gradient(left,#7ae11e 0%,#91e842 100%);
+    background: -o-linear-gradient(left,#7ae11e 0%,#91e842 100%);
+    background: -ms-linear-gradient(left,#7ae11e 0%,#91e842 100%);
+    background: linear-gradient(to right,#7ae11e 0%,#91e842 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ae11e',endColorstr='#91e842',GradientType=1);
+}
+.filter_button {
+    display: inline-block !important;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 30px;
+    height: 15px;
+    background: #808080;
+    display: block;
+    border-radius: 15px;
+    position: relative;
+    margin-right: 5px;
+    top: 3px;
+}
+.attribute-list-item h3 {
+    font-size: 12px;
+    display: inline;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #1c4d5c;
+    border-color: #1c4d5c;
+}
+.panel-primary {
+    border-color: #1c4d5c;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* left side css code */
+/* right side css*/
+
+#category-product-list .ql-button {
+    cursor: pointer;
+}
+.homebox {
+    height: 50px;
+}
+.masterscroller .homebox {
+    cursor: pointer;
+    position: relative;
+}
+.tmaster .homebox {
+    position: relative;
+}
+.grow {
+    transition: all .2s ease-in-out;
+}
+.pr-3, .px-3 {
+    padding-right: 1rem !important;
+}
+.p-1 {
+    padding: .25rem !important;
+}
+.m-0 {
+    margin: 0 !important;
+}
+.w-100 {
+    width: 100% !important;
+}
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.tmaster {
+    position: absolute;
+    left: 80px;
+    top: 18px;
+    z-index: 1;
+}
+
+ .conditionhbox {
+    position: absolute;
+    left: 80px;
+    top: 18px;
+    z-index: 1;
+}
+
+.homebox .btn-ql, .homebox .conditionhbox, .homebox .gradehbox {
+    z-index: 2 !important;
+}
+.inCircle {
+    border-radius: 5px;
+    width: 1.3em;
+    padding: .09em;
+    padding-top: 0;
+    background: #fff;
+    border: .1em solid #666;
+    color: #666;
+    text-align: center;
+    font-weight: 400;
+    font-size: .8em !important;
+    line-height: normal;
+}
+.mt-2, .my-2 {
+    margin-top: 1.8rem !important;
+}
+.ml-1, .mx-1 {
+    margin-left: 2.25rem !important;
+}
+.btn-ico.ico.ico-only {
+    max-width: 30px;
+    min-width: 30px;
+    width: 30px;
+    height: 34px;
+    padding-right: 0;
+    padding-left: 30px;
+}
+.homebox .btn-ql, .homebox .conditionhbox, .homebox .gradehbox {
+    z-index: 2 !important;
+}
+.small-image-cat .btn-ql {
+    position: relative;
+    top: 2px;
+    right: -40px;
+    z-index: 1;
+}
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    text-align: center;
+}
+.btn-ico.blue {
+    color: #fff;
+    background: #4d7089;
+}
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: box-shadow .3s cubic-bezier(.25,.8,.25,1),background-color 1s ease;
+}
+.btn-ico {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+
+.mt-2, .my-2 {
+    margin-top: 1.8rem !important;
+}
+
+.tmaster.small-image-cat .homebox-descr {
+    position: relative;
+    left: 40px;
+}
+.pl-2, .px-2 {
+    padding-left: .5rem !important;
+}
+.pr-2, .px-2 {
+    padding-right: .5rem !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+	.tmaster.small-image-cat .elipsis {
+    max-height: 45px;
+    white-space: normal;
+    position: relative;
+    top: -5px;
+}
+.tmaster.small-image-cat .full-desc {
+    display: block;
+}
+.elipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    max-height: 2.2em;
+    word-break: keep-all;
+	max-height: 45px;
+    white-space: normal;
+    position: relative;
+    top: 3px;
+}
+.tmaster.small-image-cat .homebox-descr {
+    position: relative;
+    left: 40px;
+}
+.pl-2, .px-2 {
+    padding-left: .5rem !important;
+}
+.pr-2, .px-2 {
+    padding-right: .5rem !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+
+.ri{
+	padding-right: 40px;
+}
+
+.active-filterss {
+        background-color: #1c4d5c;
+        min-height: 25px;
+        min-width: calc(100% + 30px);
+        left: -15px;
+        position: relative;
+        color: #fff;
+}
+
+/* end right side css */
+.active-filters {
+    background-color: #1c4d5c;
+    min-height: 25px;
+    min-width: calc(100% + 33px);
+    left: -15px;
+    position: relative;
+    color: #fff;
+}
+.elipsiss {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    max-height: 2.2em;
+    word-break: keep-all;
+    max-height: 45px;
+    white-space: normal;
+    position: relative;
+    top: 15px;
+}
+.hh{
+    margin-top: 40px;
+}
+.m-b{
+    margin-bottom: 20px;
+}

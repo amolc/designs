@@ -1,0 +1,59 @@
+<div class="sidebar-menu">
+    <header class="logo-env">
+        <!-- logo -->
+        <!-- <div >
+            <a> <img class="logoimage" src="css/assets/images/logo.png" alt="" /> </a>
+        </div> -->
+        <!-- logo collapse icon -->
+        <div class="sidebar-collapse">
+            <a href="" class="sidebar-collapse-icon with-animation" ng-click="showhide('main-menu')">
+                <!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+                <i class="entypo-menu"></i> </a>
+        </div>
+        <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+        <div class="sidebar-mobile-menu visible-xs">
+            <a href="" class="with-animation" ng-click="showhide('main-menu')">
+                <!-- add class "with-animation" to support animation -->
+                <i class="entypo-menu"></i> </a>
+        </div>
+    </header>
+    <ul id="main-menu" class="">
+        <li class="opened active"> <a href="" ng-click="showhide('sub_menu')"><i class="entypo-menu"></i><span>Superadmin action</span></a>
+            <ul id="sub_menu">
+                <!-- <li>
+                    <a ng-click="showhide('inner_submenu_maincategory')"> <i class="entypo-menu"></i><span>Main Category</span></a>
+                    <ul id="inner_submenu_maincategory" style="display:none;">
+                        <li class="active">
+                            <a ng-click="goto('addmain_category')"><span>Add Main Category</span></a>
+                        </li>
+                        <li class="active">
+                            <a ng-click="goto('main_category')"><span>Manage Main Category</span></a>
+                        </li>
+                    </ul>
+                </li>
+               <li>
+                    <a ng-click="showhide('inner_submenu_category')"> <i class="entypo-menu"></i><span>Category</span></a>
+                    <ul id="inner_submenu_category" style="display:none;">
+                        <li class="active">
+                            <a ng-click="goto('add_category')"><span>Add Category</span></a>
+                        </li>
+                        <li class="active">
+                            <a ng-click="goto('category')"><span>Manage Category</span></a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li>
+                    <a ng-click="showhide('inner_submenu_maincategory')"> <i class="entypo-menu"></i><span>Users</span></a>
+                    <ul id="inner_submenu_maincategory" style="display:none;">
+                        <li class="active">
+                            <a ng-click="goto('add_user')"><span>Add User</span></a>
+                        </li>
+                        <li class="active">
+                            <a ng-click="goto('viewusers')"><span>Manage User</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

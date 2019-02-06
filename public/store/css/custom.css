@@ -1,0 +1,180 @@
+
+.authorNameColor{
+	color: #afb4b7;
+}
+.classRowPaddingTop{
+	padding-top: 20px;
+} 
+ 
+.classHeaderBorder{
+   border: 1px solid black;
+   background-color: #1c4d5c;
+}
+ 
+.classTopNav{
+  float:right;
+}
+
+.classBottomNav{
+ padding-top: 18px; 
+}
+
+.classNavBackground{
+   border: none;
+   margin-bottom: 0px;
+   min-width: 100% !important;
+}
+
+.classNavForm{
+   padding:0px;
+   /* margin-bottom:0px !important; */
+       margin-left: 15px;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: black;
+    /*background-color: transparent;*/
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: black;
+}
+
+.classWebsiteLogo{
+    float: right !important;
+}
+
+.classSection1{
+  background-color: #04b096;
+      padding: 29px;
+}
+
+.classDescription{
+  color: white;
+  lettrt-spacing:2px;
+}
+
+.classProductImage{
+/*     height: 130px; */
+    width: 130px;
+}
+
+.classProductImgParent{
+ background-color: #e0dddd;
+    /* height: 131px; */
+    border: 2px solid #f0f0f0;
+    position: relative;
+    background: #fff;
+    padding: 2%;
+}
+
+.classItemListRow{
+  margin-left: 1px;
+}
+
+.classLatestGadgets{
+    /* margin-right: 47px; */
+}
+
+.classHrBorder{
+    border-top: 2px solid #ccd0d2;
+    margin-top: 0px;
+}
+
+.classFooter{
+   background-color: #385b81;
+   bottom: 0px;
+  /* padding-bottom: 60px; */
+}
+
+.classTextColor{
+   color:white;
+}
+
+.classSection2{
+    padding-top: 36px;
+        padding-bottom: 42px;
+}
+
+.classFooterTop{
+    padding-top: 15px;
+}
+
+.classTextWhite{
+   color:white;
+}
+
+.classHeaderMenu{
+   color:white;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+    background-color: white;
+}
+
+.classLaunchG{
+       color: #eee75b;
+}
+
+.leftHeader{
+	color:#244f58;
+	font-family: roboto !important;
+	    letter-spacing: 1px;
+}
+
+.rightHeader{
+	color:#2985ac;
+	font-family: roboto !important;
+}
+
+.leftHeader h1,h2,h3,h4,h5,h6{
+	font-weight:600;
+	font:10px;
+}
+
+p{
+	color:#7b9397;
+}
+
+.discp
+{
+	font-size: 15px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.logosh:before
+{
+	background: #1c4d5c !important;
+	    transition: unset  !important;
+}
+
+.catMenu a
+{
+	text-transform:uppercase;
+	font-size: 14px !important;;
+}
+
+.hLineH
+{
+   line-height: 0.5;
+}
+
+.firstCaps::first-letter { 
+ text-transform:uppercase;
+    
+}
+.texJust p
+{
+	 text-align: justify;
+}
+
+.newsh
+{
+	    line-height: 2.1;
+}
+
+.righLineH
+{
+	line-height: 1.5;
+}

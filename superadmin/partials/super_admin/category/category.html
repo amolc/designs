@@ -1,0 +1,55 @@
+<div ng-controller="CategoryController">
+    <div class="page-container">
+        <header ng-include="'partials/super_admin/common/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/super_admin/common/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">Category Management</h2>
+            <div class="add_btn_container">
+                <button class="btn btn-success" type="button" ng-click="goto('add_category')">Add Category</button>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <table class="table table-bordered table-striped datatable" id="table-2">
+                                    <thead>
+                                        <tr>
+
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="category in Category">
+                                            <td>{{category.catg_name}}</td>
+                                            <td>{{category.catg_description}}</td>
+                                            <td>
+                                                <a href="" class="btn btn-default btn-sm btn-icon icon-left" ng-click='edit({{category.catg_id}})'>
+                                                    <i class="entypo-pencil"></i> Edit
+                                                </a>
+
+                                                <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" ng-click='del({{category.catg_id}})'>
+                                                    <i class="entypo-cancel"></i> Delete
+                                                </a>
+                                                <a href="" class="btn btn-info btn-sm btn-icon icon-left" ng-click='categorydata({{category.catg_id}})'>
+                                                    <i class="entypo-info"></i> View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+    </div>
+</div>
