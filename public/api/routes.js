@@ -90,6 +90,17 @@ exports.Productdetail=function(req, res)
 	res.render('Productdetail', { data: 'Priyanka' });
 }
 
+exports.ShowEntireInventory=function(req, res)
+{
+	var jsondata = [{
+		seoId: 1,
+		title: 'Tradeexchange.co',
+		description: 'We are in the description of the seo tags',
+		keywords: 'this keyword,that keyword, keyword keyword everywhere',
+		special: ''
+	}];
+	res.render('ShowEntireInventory', { data: 'Priyanka' });
+}
 
 exports.NewArivals=function(req, res)
 {

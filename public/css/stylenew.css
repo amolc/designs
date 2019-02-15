@@ -306,6 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .active-filterss {
+        padding: 7px;
         background-color: #1c4d5c;
         min-height: 25px;
         min-width: calc(100% + 30px);
@@ -340,4 +341,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 .m-b{
     margin-bottom: 20px;
+}
+
+.active-filtersss {
+    padding: 7px;
+    background-color: #1c4d5c;
+    min-height: 25px;
+    min-width: calc(100% + 0px);
+    /* left: -15px; */
+    position: relative;
+    color: #fff;
+}
+
+
+.btn-ico.ico {
+    position: relative;
+    padding-left: 40px;
+    /* text-align: center; */
+}
+.btn-ico.yellow {
+    color: #000;
+    background-color: #ffec64;
+    background: linear-gradient(to bottom,#ffec64 5%,#ffab23 100%);
+    color: #333;
+    /* border-radius: 3px; */
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #fa2;
+}
+
+
+.btn-ico.ico span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    padding: 10px 0 12px;
+    text-align: center;
+    border-radius: 3px 0 0 3px;
+    background: rgba(0,0,0,.15);
+}
+.btn-ico {
+    display: inline-block;
+	min-width: 240px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    font: 700 14px/1 'Roboto',sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: -2px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
 }
