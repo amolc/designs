@@ -53,6 +53,7 @@ app.get('/NewArivals.html', routes.NewArivals);
 app.get('/NewArivalslisting.html', routes.NewArivalslisting);
 app.get('/Productdetail.html', routes.Productdetail);
 app.get('/Register.html', routes.Register);
+app.get('/header.html', routes.header);
 
 app.get("/sitemap.xml", function (req, res, next) {
   res.sendFile(__dirname + '/public/sitemap.xml');

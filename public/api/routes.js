@@ -77,7 +77,17 @@ exports.Home=function(req, res)
 	}];
 	res.render('Home', { data: 'Priyanka' });
 }
-
+exports.header=function(req, res)
+{
+	var jsondata = [{
+		seoId: 1,
+		title: 'Tradeexchange.co',
+		description: 'We are in the description of the seo tags',
+		keywords: 'this keyword,that keyword, keyword keyword everywhere',
+		special: ''
+	}];
+	res.render('header', { data: 'Priyanka' });
+}
 exports.Productdetail=function(req, res)
 {
 	var jsondata = [{
